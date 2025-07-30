@@ -1,0 +1,147 @@
+import { Users, Leaf, Building, Star, Scale, DollarSign } from "lucide-react"
+
+const pearlItems = [
+  {
+    icon: Users,
+    letter: "P",
+    title: "People",
+    description: "Protecting your workforce, leadership, and human capital from disruption and harm",
+    color: "from-blue-500 to-blue-600",
+    bgColor: "bg-blue-50",
+    examples: ["Workforce safety", "Leadership protection", "Employee wellbeing", "Talent retention"],
+  },
+  {
+    icon: Leaf,
+    letter: "E",
+    title: "Environment",
+    description: "Safeguarding environmental compliance and sustainability commitments",
+    color: "from-green-500 to-green-600",
+    bgColor: "bg-green-50",
+    examples: ["Environmental compliance", "Sustainability goals", "Climate adaptation", "Resource management"],
+  },
+  {
+    icon: Building,
+    letter: "A",
+    title: "Assets",
+    description: "Securing physical and digital assets critical to business operations",
+    color: "from-purple-500 to-purple-600",
+    bgColor: "bg-purple-50",
+    examples: ["Physical infrastructure", "Digital assets", "Intellectual property", "Operational facilities"],
+  },
+  {
+    icon: Star,
+    letter: "R",
+    title: "Reputation",
+    description: "Maintaining brand integrity and stakeholder trust across all touchpoints",
+    color: "from-orange-500 to-red-500",
+    bgColor: "bg-orange-50",
+    examples: ["Brand protection", "Stakeholder trust", "Media relations", "Crisis communication"],
+  },
+  {
+    icon: Scale,
+    letter: "L",
+    title: "Legal Exposure",
+    description: "Minimizing legal risks and regulatory compliance challenges",
+    color: "from-indigo-500 to-indigo-600",
+    bgColor: "bg-indigo-50",
+    examples: ["Regulatory compliance", "Legal risk mitigation", "Litigation prevention", "Policy adherence"],
+  },
+  {
+    icon: DollarSign,
+    letter: "$",
+    title: "Bottom Line",
+    description: "Protecting financial performance and long-term value creation",
+    color: "from-yellow-500 to-orange-500",
+    bgColor: "bg-yellow-50",
+    examples: ["Financial performance", "Cost management", "Revenue protection", "Value preservation"],
+  },
+]
+
+export function PearlProtection() {
+  return (
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%234F46E5' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        ></div>
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-6 relative">
+        <div className="text-center mb-20">
+          <div className="inline-block bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-6 py-3 rounded-full text-sm font-medium mb-6">
+            Protection Framework
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent">PEARL$</span>:
+            What We Protect
+          </h2>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Our work is guided by a clear purpose: to help you achieve your objectives amid uncertainty. We help you
+            understand your risks, build resilience, and protect what matters most.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {pearlItems.map((item, index) => {
+            const IconComponent = item.icon
+            return (
+              <div
+                key={index}
+                className={`${item.bgColor} border-2 border-transparent hover:border-blue-200 p-8 rounded-3xl hover:shadow-2xl transition-all duration-500 group hover:scale-105 relative overflow-hidden`}
+              >
+                {/* Background Gradient */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                ></div>
+
+                <div className="relative">
+                  <div className="flex items-center mb-6">
+                    <div
+                      className={`bg-gradient-to-br ${item.color} w-16 h-16 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                    >
+                      <IconComponent className="h-8 w-8 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold text-gray-900 mb-1">{item.letter}</div>
+                      <div className="text-xl font-bold text-gray-900">{item.title}</div>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-600 leading-relaxed mb-6">{item.description}</p>
+
+                  <div className="space-y-2">
+                    {item.examples.map((example, exampleIndex) => (
+                      <div key={exampleIndex} className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 flex-shrink-0"></div>
+                        <span>{example}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Summary */}
+        <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-12 text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl"></div>
+
+          <div className="relative text-center">
+            <h3 className="text-4xl font-bold mb-6">Comprehensive Protection</h3>
+            <p className="text-blue-100 text-lg max-w-4xl mx-auto leading-relaxed">
+              We bring targeted solutions to help organizations safeguard and enhance these six critical areas across
+              all levels of operations and governance. Each element of PEARL$ is interconnected, creating a holistic
+              approach to organizational resilience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
