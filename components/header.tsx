@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -38,19 +39,32 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <span className="text-white font-bold text-lg">S</span>
-              </div>
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-br from-orange-400 to-red-500 rounded-full"></div>
+
+              <Image
+                  src="/logo.png?height=800&width=1400"
+                  alt="Hero Background"
+                  fill
+                  className="object-cover transition-all duration-1000"
+              />
+
+              {/*<div className="w-12 h-12 bg-gradient-to-br from-springer-dark-blue to-springer-dark-blue-accent rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">*/}
+              {/*  <span className="text-white font-bold text-lg">G</span>*/}
+              {/*</div>*/}
+
+                <div className="w-12 h-12 bg-gradient-to-br from-springer-dark-blue to-springer-dark-blue-accent rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                    <span className="text-white font-bold text-lg">S</span>
+                </div>
+
+              {/*<div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-br from-orange-400 to-red-500 rounded-full"></div>*/}
             </div>
             <div>
               <span className={`font-bold text-2xl transition-colors ${isScrolled ? "text-gray-900" : "text-white"}`}>
-                SpringerD
+                GROUP RESILIENCE
               </span>
               <div
                 className={`text-sm font-medium transition-colors ${isScrolled ? "text-blue-600" : "text-blue-200"}`}
               >
-                Consultancy
+                {/*Resilience as your Competitive Advantage*/}
               </div>
             </div>
           </Link>
@@ -81,7 +95,7 @@ export function Header() {
             >
               Get Started
             </Button>
-            <Button className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 font-medium px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Button className="bg-gradient-to-r from-springer-dark-blue to-springer-dark-blue-accent hover:from-blue-700 hover:to-indigo-800 font-medium px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               Contact Us
             </Button>
           </div>
@@ -117,7 +131,7 @@ export function Header() {
                 >
                   Get Started
                 </Button>
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-700">Contact Us</Button>
+                <Button className="w-full bg-gradient-to-r from-springer-dark-blue to-springer-dark-blue-accent">Contact Us</Button>
               </div>
             </nav>
           </div>

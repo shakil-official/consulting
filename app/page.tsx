@@ -6,15 +6,11 @@ import {PanelOfExperts} from "@/components/panel-of-experts"
 import {WhatWeDo} from "@/components/what-we-do"
 import {PearlProtection} from "@/components/pearl-protection"
 import {SpringeredRisks} from "@/components/springered-risks"
-import {WhySpringeredMatters} from "@/components/why-springered-matters"
-import {StrategicPillars} from "@/components/strategic-pillars"
-import {ReachAndSectors} from "@/components/reach-and-sectors"
 import {JoinAsExpert} from "@/components/join-as-expert"
-import {WhyPartnerWithUs} from "@/components/why-partner-with-us"
 import {OurClients} from "@/components/our-clients"
 import {Footer} from "@/components/footer"
-import ClientTestimonialsWithBranding from "@/components/clientTestimonialsWithBranding";
 import {BrandingSlider} from "@/components/branding-slider";
+import {MaturityCheck} from "@/components/maturity-check";
 
 export default function Home() {
     return (
@@ -28,12 +24,8 @@ export default function Home() {
                 <WhatWeDo/>
                 <PearlProtection/>
                 <SpringeredRisks/>
-                <WhySpringeredMatters/>
-                <StrategicPillars/>
-                <ReachAndSectors/>
+                <MaturityCheck/>
                 <JoinAsExpert/>
-                <WhyPartnerWithUs/>
-
                 <BrandingSlider
                     title="Ours clients"
                     subtitle=""
