@@ -28,7 +28,7 @@ export default function Home() {
                 <MaturityCheck/>
                 <JoinAsExpert/>
                 <BrandingSlider
-                    title="Ours clients"
+                    title="Ours clients & partners"
                     subtitle=""
                     showControls={true}
                     autoPlay={true}

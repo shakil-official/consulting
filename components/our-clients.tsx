@@ -1,7 +1,7 @@
 "use client"
 
-import {useState, useEffect} from "react"
-import {ChevronLeft, ChevronRight, Quote, Star} from "lucide-react"
+import { useState, useEffect } from "react"
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react"
 
 const clientTestimonials = [
     {
@@ -56,42 +56,41 @@ const clientTestimonials = [
     },
 ]
 
+// ✅ Change this to 2 or 3 based on how many you want to show per slide
+const ITEMS_PER_SLIDE = 3
+
 export function OurClients() {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 2) % clientTestimonials.length)
+            setCurrentIndex((prev) => (prev + ITEMS_PER_SLIDE) % clientTestimonials.length)
         }, 8000)
         return () => clearInterval(timer)
     }, [])
 
     const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 2) % clientTestimonials.length)
+        setCurrentIndex((prev) => (prev + ITEMS_PER_SLIDE) % clientTestimonials.length)
     }
 
     const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 2 + clientTestimonials.length) % clientTestimonials.length)
+        setCurrentIndex((prev) => (prev - ITEMS_PER_SLIDE + clientTestimonials.length) % clientTestimonials.length)
     }
 
     const getCurrentTestimonials = () => {
-        if (currentIndex === clientTestimonials.length - 1) {
-            return [clientTestimonials[currentIndex], clientTestimonials[0]]
+        const result = []
+        for (let i = 0; i < ITEMS_PER_SLIDE; i++) {
+            result.push(clientTestimonials[(currentIndex + i) % clientTestimonials.length])
         }
-        return [
-            clientTestimonials[currentIndex],
-            clientTestimonials[currentIndex + 1] || clientTestimonials[0]
-        ]
+        return result
     }
 
     const currentTestimonials = getCurrentTestimonials()
 
     return (
-        // <section className="py-16 bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-700 text-white relative overflow-hidden">
         <section className="py-16 bg-gradient-to-br from-springer-dark-blue via-springer-dark-blue-accent to-springer-dark-blue-accent text-white relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0">
-
                 <div className="absolute top-0 left-0 w-72 h-72 bg-primary-foreground/5 rounded-full blur-3xl"></div>
                 <div className="absolute top-1/2 right-0 w-48 h-48 bg-primary-foreground/8 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 left-1/3 w-60 h-60 bg-primary-foreground/5 rounded-full blur-3xl"></div>
@@ -99,9 +98,6 @@ export function OurClients() {
 
             <div className="container mx-auto px-4 lg:px-6 relative">
                 <div className="text-center mb-12">
-                    {/*<div className="inline-block bg-primary-foreground/10 backdrop-blur-sm text-white px-5 py-2 rounded-full text-sm font-medium mb-4 border border-white/20">*/}
-                    {/*    Client Success Stories*/}
-                    {/*</div>*/}
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                         What Our{" "}
                         <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
@@ -114,51 +110,50 @@ export function OurClients() {
                 </div>
 
                 <div className="max-w-7xl mx-auto relative">
-                    {/* Main Slider Container */}
+                    {/* Testimonials */}
                     <div className="relative">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                        <div
+                            className={`grid grid-cols-1 ${
+                                ITEMS_PER_SLIDE === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2"
+                            } gap-6 lg:gap-8`}
+                        >
                             {currentTestimonials.map((testimonial, index) => (
                                 <div
                                     key={`${currentIndex}-${index}`}
                                     className="bg-primary-foreground/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 lg:p-8 relative overflow-hidden transform transition-all duration-500 hover:scale-105 hover:bg-primary-foreground/15"
                                 >
-                                    {/* Background Pattern */}
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary-foreground/5 rounded-full blur-2xl"></div>
 
                                     <div className="relative">
-                                        {/* Quote Icon */}
                                         <div className="flex justify-center mb-4">
                                             <div className="bg-primary-foreground/20 backdrop-blur-sm rounded-xl p-3 border border-white/30">
-                                                <Quote className="h-6 w-6 text-white"/>
+                                                <Quote className="h-6 w-6 text-white" />
                                             </div>
                                         </div>
 
-                                        {/* Rating */}
                                         <div className="flex justify-center mb-4">
                                             {[...Array(testimonial.rating)].map((_, i) => (
-                                                <Star key={i} className="h-5 w-5 text-yellow-400 fill-current"/>
+                                                <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                                             ))}
                                         </div>
 
-                                        {/* Title */}
                                         <h3 className="text-xl lg:text-2xl font-bold text-center mb-4 leading-tight">
                                             {testimonial.title}
                                         </h3>
 
-                                        {/* Message */}
                                         <blockquote className="text-sm lg:text-base text-center leading-relaxed mb-6 text-blue-100 line-clamp-4">
                                             "{testimonial.message}"
                                         </blockquote>
 
-                                        {/* Client Info */}
                                         <div className="text-center">
                                             <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
                                                 <h4 className="text-lg font-bold text-white mb-1">{testimonial.client}</h4>
-                                                {/*<p className="text-blue-200 text-sm font-medium mb-1">{testimonial.position}</p>*/}
-                                                {/*<p className="text-blue-300 text-sm font-semibold mb-2">{testimonial.company}</p>*/}
-                                                {/*<div className="bg-primary-foreground/20 rounded-full px-3 py-1 text-xs font-medium text-white inline-block">*/}
-                                                {/*    {testimonial.industry}*/}
-                                                {/*</div>*/}
+                                                {/* Uncomment for more details:
+                                                <p className="text-blue-200 text-sm font-medium mb-1">{testimonial.position}</p>
+                                                <p className="text-blue-300 text-sm font-semibold mb-2">{testimonial.company}</p>
+                                                <div className="bg-primary-foreground/20 rounded-full px-3 py-1 text-xs font-medium text-white inline-block">
+                                                    {testimonial.industry}
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>
@@ -166,29 +161,29 @@ export function OurClients() {
                             ))}
                         </div>
 
-                        {/* Navigation Arrows */}
-                        {/*<button*/}
-                        {/*    onClick={prevSlide}*/}
-                        {/*    className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-primary-foreground/20 hover:bg-primary-foreground/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 hover:scale-110 border border-white/30 z-10"*/}
-                        {/*>*/}
-                        {/*    <ChevronLeft className="h-5 w-5 text-white"/>*/}
-                        {/*</button>*/}
-                        {/*<button*/}
-                        {/*    onClick={nextSlide}*/}
-                        {/*    className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-primary-foreground/20 hover:bg-primary-foreground/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 hover:scale-110 border border-white/30 z-10"*/}
-                        {/*>*/}
-                        {/*    <ChevronRight className="h-5 w-5 text-white"/>*/}
-                        {/*</button>*/}
+                        {/* Optional Arrows */}
+                        {/* <button
+                            onClick={prevSlide}
+                            className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-primary-foreground/20 hover:bg-primary-foreground/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 hover:scale-110 border border-white/30 z-10"
+                        >
+                            <ChevronLeft className="h-5 w-5 text-white" />
+                        </button>
+                        <button
+                            onClick={nextSlide}
+                            className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-primary-foreground/20 hover:bg-primary-foreground/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 hover:scale-110 border border-white/30 z-10"
+                        >
+                            <ChevronRight className="h-5 w-5 text-white" />
+                        </button> */}
                     </div>
 
-                    {/* Testimonial Indicators */}
+                    {/* Indicators */}
                     <div className="flex justify-center mt-8 space-x-2">
-                        {Array.from({ length: Math.ceil(clientTestimonials.length / 2) }).map((_, index) => (
+                        {Array.from({ length: Math.ceil(clientTestimonials.length / ITEMS_PER_SLIDE) }).map((_, index) => (
                             <button
                                 key={index}
-                                onClick={() => setCurrentIndex(index * 2)}
+                                onClick={() => setCurrentIndex(index * ITEMS_PER_SLIDE)}
                                 className={`transition-all duration-300 rounded-full ${
-                                    Math.floor(currentIndex / 2) === index
+                                    Math.floor(currentIndex / ITEMS_PER_SLIDE) === index
                                         ? "w-8 h-2 bg-primary-foreground"
                                         : "w-2 h-2 bg-primary-foreground/50 hover:bg-primary-foreground/70"
                                 }`}

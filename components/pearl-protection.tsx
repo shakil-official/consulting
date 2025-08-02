@@ -59,7 +59,7 @@ const pearlItems = [
 
 export function PearlProtection() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section id={"pearl"} className="py-24 bg-white relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5">
                 <div
@@ -111,15 +111,15 @@ export function PearlProtection() {
 
                                     <p className="text-gray-600 leading-relaxed mb-6">{item.description}</p>
 
-                                    <div className="space-y-2">
-                                        {item.examples.map((example, exampleIndex) => (
-                                            <div key={exampleIndex} className="flex items-center text-sm text-gray-600">
-                                                <div
-                                                    className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>
-                                                <span>{example}</span>
-                                            </div>
-                                        ))}
-                                    </div>
+                                    {/*<div className="space-y-2">*/}
+                                    {/*    {item.examples.map((example, exampleIndex) => (*/}
+                                    {/*        <div key={exampleIndex} className="flex items-center text-sm text-gray-600">*/}
+                                    {/*            <div*/}
+                                    {/*                className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>*/}
+                                    {/*            <span>{example}</span>*/}
+                                    {/*        </div>*/}
+                                    {/*    ))}*/}
+                                    {/*</div>*/}
                                 </div>
                             </div>
                         )

@@ -164,7 +164,7 @@ export function BrandingSlider({
                         {title.split(" ").map((word, index) => (
                             <span
                                 key={index}
-                                className={index >= 2 ? "bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent" : ""}
+                                className={index >= 6 ? "bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent" : ""}
                             >
                 {word}{" "}
               </span>

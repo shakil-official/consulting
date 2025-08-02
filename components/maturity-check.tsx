@@ -14,7 +14,7 @@ const benefits = [
 export function MaturityCheck() {
   return (
       <section
-          id="contact"
+          id="maturity-check"
           className="py-20 bg-gradient-to-br from-springer-dark-blue to-springer-dark-blue-accent text-white"
       >
         <div className="container mx-auto px-4 lg:px-6">

@@ -46,7 +46,7 @@ const experts = [
 
 export function PanelOfExperts() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section id="panel-of-experts" className="py-24 bg-white relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5 pointer-events-none">
                 <div
@@ -90,11 +90,11 @@ export function PanelOfExperts() {
                                             <Award className="h-4 w-4 text-white" />
                                         </div>
                                     </div>
-                                    <div className="flex-1 min-w-0">
+                                    <div className="flex-1 min-w-0 self-end">
                                         <h3 className="text-lg font-semibold text-gray-900 group-hover:text-springer-dark-blue transition-colors leading-tight">
                                             {expert.name}
                                         </h3>
-                                        <p className="text-sm font-medium text-springer-dark-blue leading-snug mt-2 mb-2">{expert.title}</p>
+
                                         {/*<p className="text-sm text-gray-500 leading-snug mb-2">*/}
                                         {/*    {expert.specialization}*/}
                                         {/*</p>*/}
@@ -110,7 +110,8 @@ export function PanelOfExperts() {
                                         {/*</div>*/}
                                     </div>
                                 </div>
-                                <p className="text-gray-600 text-sm leading-relaxed">{expert.background}</p>
+                                <p className="text-sm font-medium text-springer-dark-blue leading-snug mt-2 mb-2">{expert.title}</p>
+                                {/*<p className="text-gray-600 text-sm leading-relaxed">{expert.background}</p>*/}
                             </div>
                         </div>
                     ))}

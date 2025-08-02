@@ -1,4 +1,4 @@
-import {Users, Vote, Star, Building, Cloud, Globe, Leaf, FileText, Zap, Shield} from "lucide-react"
+import {Users, Vote, Star, Building, Cloud, Globe, Leaf, FileText, Zap, Shield, ArrowRight} from "lucide-react"
 
 
 const springeredRisks = [
@@ -147,7 +147,7 @@ const springeredRisks = [
 
 export function WhatWeDoUpgat() {
     return (
-        <section id="risks" className="py-24 bg-gradient-to-br from-gray-50 to-primary/5 relative overflow-hidden">
+        <section id="whatWeDoNow" className="py-24 bg-gradient-to-br from-gray-50 to-primary/5 relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
@@ -203,7 +203,14 @@ export function WhatWeDoUpgat() {
                                             </div>
                                         ))}
                                     </div>
+
                                 </div>
+
+                                <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors" style={{ marginTop: '12px' }}>
+                                    <span className="text-sm mt-5">Learn More</span>
+                                    <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                </div>
+
                             </div>
                         )
                     })}
