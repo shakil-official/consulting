@@ -59,7 +59,7 @@ export function PanelOfExperts() {
             <div className="container mx-auto px-4 lg:px-6 relative z-10">
                 <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-                        Panel of{" "}
+                        Subject Matter{" "}
                         <span className="bg-gradient-to-r from-springer-dark-blue to-springer-dark-blue-accent bg-clip-text text-transparent">
               Experts
             </span>

@@ -170,9 +170,7 @@ export function SpringeredRisks() {
                         : The Risks We Address
                     </h2>
                     <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                        In today's interconnected world, non-financial risks can emerge rapidly and cascade across industries,
-                        borders, and stakeholder groups. A single incident can trigger reputational damage, operational disruption,
-                        and regulatory scrutiny within hours.
+                        In today’s interconnected world, risks can escalate quickly—impacting people, operations, reputation, and compliance within hours. We help clients manage these complex threats across ten critical risk areas using our SPRINGERED framework.
                     </p>
                 </div>
 
@@ -203,7 +201,7 @@ export function SpringeredRisks() {
 
                                     <div className="space-y-1">
                                         <div className="text-xs font-semibold text-gray-700 mb-2">Examples:</div>
-                                        {risk.examples.slice(0, 2).map((example, exampleIndex) => (
+                                        {risk.examples.slice(0, 4).map((example, exampleIndex) => (
                                             <div key={exampleIndex} className="flex items-start text-xs text-gray-600">
                                                 <div className="w-1 h-1 bg-primary rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
                                                 <span>{example}</span>

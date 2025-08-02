@@ -47,9 +47,7 @@ export function JoinAsExpert() {
             </span>
                     </h2>
                     <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                        We're always looking for experienced professionals passionate about resilience, crisis management, and risk
-                        leadership. Collaborate with a global team of specialists and make a real impact across industries and
-                        geographies.
+                        We're seeking experienced professionals passionate about resilience, crisis management, and risk leadership. Join our global team and make a real impact where it matters most.
                     </p>
                 </div>
 

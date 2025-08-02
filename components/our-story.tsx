@@ -37,38 +37,24 @@ export function OurStory() {
                         <div className="space-y-8">
                             <div>
                                 <h2 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                                    Empowering Organizations to{" "}
-                                    <span className="bg-gradient-to-r from-springer-dark-blue to-springer-dark-blue-accent bg-clip-text text-transparent">Thrive</span>
+                                    Our{" "}
+                                    <span className="bg-gradient-to-r from-springer-dark-blue to-springer-dark-blue-accent bg-clip-text text-transparent">Story</span>
                                 </h2>
                             </div>
 
                             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                                 <p className="text-xl text-gray-700 font-medium">
-                                    At Group Resilience, we empower CEOs, Boards, Executive Suites, and organizations to
-                                    prepare for and
-                                    thrive amid uncertainty.
+                                    At Group Resilience, we empower CEOs, Boards, Executive Suites, and organizations to prepare for and thrive amid uncertainty. We enable our clients to mitigate risks, drive sustainable growth, build resilient futures, and generate competitive advantages.
                                 </p>
                                 <p>
-                                    We enable our clients to mitigate non-financial risks, drive sustainable growth,
-                                    build resilient
-                                    futures, and generate competitive advantages. From managing resource constraints to
-                                    embedding resilience
-                                    across every business function, we deliver systems that add value before, during,
-                                    and after crises.
+                                    From managing resource constraints to embedding resilience across every business function, we deliver systems that add value before, during, and after crises—building trust with all stakeholders.
                                 </p>
                                 <p>
-                                    We provide tailored risk solutions—whether as specialized expertise or fully
-                                    embedded strategies—for the
-                                    most pressing business challenges and controversies, building trust with all
-                                    stakeholders.
+                                    We provide tailored risk solutions—whether as specialized expertise or fully embedded strategies—for the most pressing business challenges and controversies.
                                 </p>
-                                <p className="text-primary font-medium">
-                                    Our team is composed of world-recognized specialists who have led resilience from
-                                    the inside—not just as
-                                    consultants, but as in-house practitioners, subject-matter experts, senior
-                                    executives, and global heads
-                                    of function.
-                                </p>
+                                {/*<p className="text-primary font-medium">*/}
+                                {/*    We provide tailored risk solutions—whether as specialized expertise or fully embedded strategies—for the most pressing business challenges and controversies.*/}
+                                {/*</p>*/}
                             </div>
 
                         </div>

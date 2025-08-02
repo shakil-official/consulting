@@ -1,6 +1,5 @@
-
-import { Briefcase, Shield, TrendingUp, Users, Settings, BookOpen, ArrowRight, CheckCircle } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import {Briefcase, Shield, TrendingUp, Users, Settings, BookOpen, ArrowRight, CheckCircle} from "lucide-react"
+import {Button} from "@/components/ui/button"
 
 const services = [
     {
@@ -78,12 +77,14 @@ export function WhatWeDo() {
                     {/*</div>*/}
                     <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                         What We{" "}
-                        <span className="bg-gradient-to-r from-springer-dark-blue to-springer-dark-blue-accent bg-clip-text text-transparent">
+                        <span
+                            className="bg-gradient-to-r from-springer-dark-blue to-springer-dark-blue-accent bg-clip-text text-transparent">
               Do
             </span>
                     </h2>
                     <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                        We provide comprehensive consulting services that help organizations build resilience, manage risks
+                        We provide comprehensive consulting services that help organizations build resilience, manage
+                        risks
                         effectively, and achieve sustainable growth in an uncertain world.
                     </p>
                 </div>
@@ -105,7 +106,7 @@ export function WhatWeDo() {
                                     <div
                                         className={`bg-gradient-to-br ${service.color} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                                     >
-                                        <IconComponent className="h-8 w-8 text-white" />
+                                        <IconComponent className="h-8 w-8 text-white"/>
                                     </div>
 
                                     <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-gray-800">{service.title}</h3>
@@ -114,15 +115,17 @@ export function WhatWeDo() {
                                     <div className="space-y-2 mb-6">
                                         {service.features.map((feature, featureIndex) => (
                                             <div key={featureIndex} className="flex items-center text-sm text-gray-600">
-                                                <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                                                <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0"/>
                                                 <span>{feature}</span>
                                             </div>
                                         ))}
                                     </div>
 
-                                    <div className="flex items-center text-primary font-medium group-hover:text-primary/90 transition-colors cursor-pointer">
+                                    <div
+                                        className="flex items-center text-primary font-medium group-hover:text-primary/90 transition-colors cursor-pointer">
                                         <span className="text-sm">Learn More</span>
-                                        <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                        <ArrowRight
+                                            className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform"/>
                                     </div>
                                 </div>
                             </div>

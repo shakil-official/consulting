@@ -3,36 +3,30 @@ import Image from "next/image"
 
 const approaches = [
     {
-        icon: Target,
-        title: "Strategic Assessment",
+        icon: Users,
+        title: "In-house practitioners.",
         description: "Comprehensive risk identification and impact analysis tailored to your industry and business model",
         color: "from-springer-dark-blue to-springer-dark-blue-accent",
     },
     {
-        icon: Lightbulb,
-        title: "Innovative Solutions",
+        icon: Users,
+        title: "Subject-matter experts and senior executives.",
         description: "Creative problem-solving approaches that turn challenges into competitive advantages",
         color: "from-purple-500 to-purple-600",
     },
     {
         icon: Users,
-        title: "Collaborative Partnership",
+        title: "Global heads of function and regional leads",
         description: "Working closely with your teams to ensure knowledge transfer and sustainable implementation",
         color: "from-green-500 to-green-600",
-    },
-    {
-        icon: CheckCircle,
-        title: "Proven Methodologies",
-        description: "Time-tested frameworks and best practices refined through years of successful engagements",
-        color: "from-orange-500 to-red-500",
     },
 ]
 
 const stats = [
-    {icon: Award, number: "500+", label: "Projects Completed", color: "text-primary"},
-    {icon: Users, number: "98%", label: "Client Satisfaction", color: "text-green-600"},
-    {icon: Shield, number: "25+", label: "Industry Sectors", color: "text-purple-600"},
-    {icon: Clock, number: "15+", label: "Years Experience", color: "text-orange-600"},
+    {icon: Award, number: "100+", label: "Countries", color: "text-primary"},
+    {icon: Users, number: "500+", label: "High-impact crises", color: "text-green-600"},
+    {icon: Shield, number: "100+", label: "Companies", color: "text-purple-600"},
+    // {icon: Clock, number: "15+", label: "Years Experience", color: "text-orange-600"},
 ]
 
 export function ExpertiseApproach() {
@@ -51,16 +45,12 @@ export function ExpertiseApproach() {
               Approach
             </span>
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                        Our unique blend of deep industry knowledge, innovative thinking, and collaborative approach
-                        ensures that
-                        every engagement delivers measurable value and lasting impact.
-                    </p>
+                    <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">At Group Resilience, we deliver more than advice—we combine operational experience, strategic expertise, and global insight to shape real resilience outcomes. Our team is composed of internationally recognized specialists who have led resilience from the inside—bringing first-hand knowledge, not just external perspective.</p>
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
                     <div className="space-y-8">
-                        <h3 className="text-4xl font-bold text-gray-900 mb-8">Our Methodology</h3>
+                        {/*<h3 className="text-4xl font-bold text-gray-900 mb-8">Our Methodology</h3>*/}
                         <div className="space-y-8">
                             {approaches.map((approach, index) => {
                                 const IconComponent = approach.icon
@@ -72,10 +62,10 @@ export function ExpertiseApproach() {
                                             <IconComponent className="h-8 w-8 text-white"/>
                                         </div>
                                         <div className="flex-1">
-                                            <h4 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                            <h4 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors  align-middle">
                                                 {approach.title}
                                             </h4>
-                                            <p className="text-gray-600 leading-relaxed text-lg">{approach.description}</p>
+                                            {/*<p className="text-gray-600 leading-relaxed text-lg">{approach.description}</p>*/}
                                         </div>
                                     </div>
                                 )
@@ -106,12 +96,12 @@ export function ExpertiseApproach() {
                     <div className="absolute bottom-0 right-0 w-48 h-48 bg-primary/5 rounded-full blur-2xl"></div>
 
                     <div className="relative">
-                        <div className="text-center mb-12">
-                            <h3 className="text-3xl font-bold text-gray-900 mb-4">Proven Track Record</h3>
-                            <p className="text-gray-600 text-lg">Numbers that speak to our commitment and expertise</p>
-                        </div>
+                        {/*<div className="text-center mb-12">*/}
+                        {/*    <h3 className="text-3xl font-bold text-gray-900 mb-4">Proven Track Record</h3>*/}
+                        {/*    <p className="text-gray-600 text-lg">Numbers that speak to our commitment and expertise</p>*/}
+                        {/*</div>*/}
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 t">
                             {stats.map((stat, index) => {
                                 const IconComponent = stat.icon
                                 return (

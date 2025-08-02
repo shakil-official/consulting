@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/button"
 import { CheckCircle, ArrowRight, BarChart3 } from "lucide-react"
 
+
 const benefits = [
-  "Comprehensive risk assessment across all SPRINGERD categories",
-  "Benchmarking against industry best practices",
-  "Personalized recommendations for improvement",
-  "Priority roadmap for risk management enhancement",
-  "Executive summary with actionable insights",
-]
+  "Assess your current resilience maturity level",
+  "Identify key strengths within your existing program",
+  "Pinpoint critical gaps and areas for improvement",
+  "Receive clear, tailored recommendations",
+  "Define next steps to advance your resilience maturity"
+];
+
 
 export function MaturityCheck() {
   return (
@@ -24,8 +26,7 @@ export function MaturityCheck() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Take a Maturity Check Now</h2>
 
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Discover where your organization stands in risk management maturity. Our comprehensive assessment will
-              provide you with valuable insights and a clear roadmap for improvement.
+              How Resilient Is Your Organization? Our Resilience Maturity Check provides a fast, structured assessment of your organization’s preparedness across critical resilience domains.
             </p>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-8">
