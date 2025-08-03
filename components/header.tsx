@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Image from "next/image";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -28,9 +29,10 @@ export function Header() {
         { name: "Group Resilience", href: "#story" },
         { name: "Expertise & Approach", href: "#expertise" },
         { name: "Subject Matter Experts", href: "#panel-of-experts" },
+        { name: "Strategic Pillars", href: "#strategic-pillars" },
       ],
     },
-    { name: "Strategic Pillars", href: "#strategic-pillars" },
+
     {
       name: "What We Do",
       href: "#", // Parent link can be a placeholder or first sub-item
@@ -38,9 +40,9 @@ export function Header() {
         { name: "Services", href: "#whatWeDoNow" },
         { name: "PEARL$", href: "#pearl" },
         { name: "SPRINGERED", href: "#risks" },
+        { name: "Reach and Sectors", href: "#reach-and-sectors" },
       ],
     },
-    { name: "Reach and Sectors", href: "#reach-and-sectors" },
     { name: "Maturity Check", href: "#maturity-check" },
     { name: "Join us", href: "#joinUsAs" },
   ]
@@ -58,7 +60,14 @@ export function Header() {
             <Link href="/" className="flex items-center space-x-3 group">
               <div className="relative">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                  <span className="text-white font-bold text-lg">G</span>
+                  {/*<span className="text-white font-bold text-lg">G</span>*/}
+                  <Image
+                      src={"/logo_tp.png"}
+                      alt={"logo_"}
+                      width={120}
+                      height={220}
+                      className="shadow-md group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
               <div>
@@ -121,16 +130,16 @@ export function Header() {
             </nav>
 
             <div className="hidden lg:flex items-center space-x-4">
-              <Button
-                  variant="outline"
-                  className={`border-2 font-medium transition-all duration-300 hover:scale-105 ${
-                      isScrolled
-                          ? "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
-                          : "border-white text-blue-500 hover:bg-white hover:text-blue-600"
-                  }`}
-              >
-                Get Started
-              </Button>
+              {/*<Button*/}
+              {/*    variant="outline"*/}
+              {/*    className={`border-2 font-medium transition-all duration-300 hover:scale-105 ${*/}
+              {/*        isScrolled*/}
+              {/*            ? "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"*/}
+              {/*            : "border-white text-blue-500 hover:bg-white hover:text-blue-600"*/}
+              {/*    }`}*/}
+              {/*>*/}
+              {/*  Get Started*/}
+              {/*</Button>*/}
               <Button className="bg-gradient-to-r from-blue-900 to-indigo-900 hover:from-blue-700 hover:to-indigo-800 font-medium px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 Reach out
               </Button>
@@ -183,12 +192,12 @@ export function Header() {
                     )}
                   </Accordion>
                   <div className="flex flex-col space-y-3 pt-4 px-4">
-                    <Button
-                        variant="outline"
-                        className="w-full border-blue-400 text-blue-600 hover:bg-blue-600 hover:text-white bg-transparent"
-                    >
-                      Get Started
-                    </Button>
+                    {/*<Button*/}
+                    {/*    variant="outline"*/}
+                    {/*    className="w-full border-blue-400 text-blue-600 hover:bg-blue-600 hover:text-white bg-transparent"*/}
+                    {/*>*/}
+                    {/*  Get Started*/}
+                    {/*</Button>*/}
                     <Button className="w-full bg-gradient-to-r from-blue-900 to-indigo-900">Reach out</Button>
                   </div>
                 </nav>

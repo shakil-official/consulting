@@ -125,8 +125,9 @@ const springeredRisks = [
             "Residual risk scoring and prioritization",
             "Mitigation planning and strategy development"
         ],
-        color: "from-cyan-500 to-cyan-600",
-        bgColor: "bg-cyan-50"
+        color: "from-blue-500 to-blue-600",
+        bgColor: "bg-blue-50"
+
     },
     {
         icon: Vote,

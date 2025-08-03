@@ -1,4 +1,4 @@
-import {Users, Leaf, Building, Star, Scale, DollarSign} from "lucide-react"
+import {Users, Leaf, Building, Star, Scale,Factory, DollarSign} from "lucide-react"
 
 const pearlItems = [
     {
@@ -20,7 +20,7 @@ const pearlItems = [
         examples: ["Environmental compliance", "Sustainability goals", "Climate adaptation", "Resource management"],
     },
     {
-        icon: Building,
+        icon: Factory,
         letter: "A",
         title: "Assets",
         description: "Securing physical and digital assets critical to business operations",

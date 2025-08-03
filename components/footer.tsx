@@ -5,7 +5,7 @@ export function Footer() {
     return (
         <footer className="bg-gray-900 text-white py-16">
             <div className="container mx-auto px-4 lg:px-6">
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Company Info */}
                     {/*<div>*/}
                     {/*    <div className="flex items-center space-x-2 mb-6">*/}
@@ -73,6 +73,23 @@ export function Footer() {
                                     SPRINGERED
                                 </Link>
                             </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 className="font-semibold text-lg mb-6">Engage with Us</h3>
+                        <ul className="space-y-3 text-gray-300">
+                            <li>
+                                <Link href="#maturity-check" className="hover:text-white transition-colors">
+                                    Maturity Check
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="#joinUsAs" className="hover:text-white transition-colors">
+                                    Join us
+                                </Link>
+                            </li>
+
                         </ul>
                     </div>
 

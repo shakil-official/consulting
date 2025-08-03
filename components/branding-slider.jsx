@@ -8,7 +8,7 @@ const defaultLogos = [
     {
         id: "1",
         name: "Global Manufacturing Corp",
-        logo: "/shopno.png",
+        logo: "/IMG_8289.PNG",
         industry: "Manufacturing",
         partnership: "5+ Years",
         description: "Leading global manufacturer with operations in 40+ countries",
@@ -20,7 +20,7 @@ const defaultLogos = [
     {
         id: "2",
         name: "International Bank Holdings",
-        logo: "/shopno.png",
+        logo: "/IMG_8289.PNG",
         industry: "Financial Services",
         partnership: "3+ Years",
         description: "Top-tier investment bank serving institutional clients worldwide",
@@ -32,7 +32,7 @@ const defaultLogos = [
     {
         id: "3",
         name: "Energy Solutions International",
-        logo: "/shopno.png",
+        logo: "/IMG_8289.PNG",
         industry: "Energy & Utilities",
         partnership: "7+ Years",
         description: "Renewable energy leader with sustainable power solutions",
@@ -44,7 +44,7 @@ const defaultLogos = [
     {
         id: "4",
         name: "Defense Technologies Ltd",
-        logo: "/shopno.png",
+        logo: "/IMG_8289.PNG",
         industry: "Defense & Security",
         partnership: "4+ Years",
         description: "Advanced defense systems and security technology provider",
@@ -56,7 +56,7 @@ const defaultLogos = [
     {
         id: "5",
         name: "Healthcare Innovation Group",
-        logo: "/shopno.png",
+        logo: "/IMG_8289.PNG",
         industry: "Healthcare",
         partnership: "6+ Years",
         description: "Medical technology innovator improving patient outcomes globally",
@@ -68,7 +68,7 @@ const defaultLogos = [
     {
         id: "6",
         name: "Fortune Financial Services",
-        logo: "/shopno.png",
+        logo: "/IMG_8289.PNG",
         industry: "Financial Services",
         partnership: "8+ Years",
         description: "Premier wealth management and investment advisory firm",
