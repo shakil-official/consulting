@@ -1,4 +1,7 @@
-import { Award } from "lucide-react"
+"use client"
+
+import { useState } from "react"
+import { Award, X } from "lucide-react"
 import Image from "next/image"
 
 const experts = [
@@ -45,6 +48,8 @@ const experts = [
 ]
 
 export function PanelOfExperts() {
+    const [selectedExpert, setSelectedExpert] = useState(null)
+
     return (
         <section id="panel-of-experts" className="py-24 bg-white relative overflow-hidden">
             {/* Background Pattern */}
@@ -56,6 +61,7 @@ export function PanelOfExperts() {
                     }}
                 />
             </div>
+
             <div className="container mx-auto px-4 lg:px-6 relative z-10">
                 <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
@@ -65,10 +71,11 @@ export function PanelOfExperts() {
             </span>
                     </h2>
                     <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                        Our team consists of global specialists with deep real-world experience—not just consultants, but
-                        practitioners and executive leaders.
+                        Our team consists of global specialists with deep real-world experience—not just consultants,
+                        but practitioners and executive leaders.
                     </p>
                 </div>
+
                 <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
                     {experts.map((expert, index) => (
                         <div
@@ -94,29 +101,54 @@ export function PanelOfExperts() {
                                         <h3 className="text-lg font-semibold text-gray-900 group-hover:text-springer-dark-blue transition-colors leading-tight">
                                             {expert.name}
                                         </h3>
-
-                                        {/*<p className="text-sm text-gray-500 leading-snug mb-2">*/}
-                                        {/*    {expert.specialization}*/}
-                                        {/*</p>*/}
-                                        {/*<div className="flex flex-wrap gap-4 text-sm text-gray-500">*/}
-                                        {/*    <div className="flex items-center">*/}
-                                        {/*        <MapPin className="h-4 w-4 mr-1" />*/}
-                                        {/*        {expert.location}*/}
-                                        {/*    </div>*/}
-                                        {/*    <div className="flex items-center">*/}
-                                        {/*        <Briefcase className="h-4 w-4 mr-1" />*/}
-                                        {/*        {expert.experience}*/}
-                                        {/*    </div>*/}
-                                        {/*</div>*/}
                                     </div>
                                 </div>
-                                <p className="text-sm font-medium text-springer-dark-blue leading-snug mt-2 mb-2">{expert.title}</p>
-                                {/*<p className="text-gray-600 text-sm leading-relaxed">{expert.background}</p>*/}
+
+                                <p className="text-sm font-medium text-springer-dark-blue leading-snug mt-2 mb-4">{expert.title}</p>
+
+                                <button
+                                    onClick={() => setSelectedExpert(expert)}
+                                    className="text-sm text-springer-dark-blue hover:text-white hover:bg-springer-dark-blue px-4 py-2 rounded-full border border-springer-dark-blue transition-colors duration-300"
+                                >
+                                    Learn More
+                                </button>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+
+            {/* Modal */}
+            {selectedExpert && (
+                <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center px-4">
+                    <div className="bg-white rounded-2xl max-w-lg w-full p-6 relative shadow-xl">
+                        <button
+                            className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+                            onClick={() => setSelectedExpert(null)}
+                        >
+                            <X className="h-5 w-5" />
+                        </button>
+                        <div className="flex items-center gap-4 mb-4">
+                            <Image
+                                src={selectedExpert.image}
+                                alt={selectedExpert.name}
+                                width={80}
+                                height={80}
+                                className="rounded-xl border-4 border-white shadow-md"
+                            />
+                            <div>
+                                <h3 className="text-xl font-semibold text-gray-900">{selectedExpert.name}</h3>
+                                <p className="text-sm text-springer-dark-blue font-medium">{selectedExpert.title}</p>
+                                <p className="text-sm text-gray-500">{selectedExpert.specialization}</p>
+                                <p className="text-sm text-gray-500">
+                                    {selectedExpert.location} • {selectedExpert.experience}
+                                </p>
+                            </div>
+                        </div>
+                        <p className="text-sm text-gray-700 leading-relaxed">{selectedExpert.background}</p>
+                    </div>
+                </div>
+            )}
         </section>
     )
 }
