@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Users, Globe, Award, TrendingUp, ArrowRight } from "lucide-react"
+import Link from "next/link";
 
 const partnershipOptions = [
     {
@@ -62,13 +63,15 @@ export function JoinAsExpert() {
                             organizations build a more resilient future.
                         </p>
 
-                        <Button
-                            size="lg"
-                            className="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
-                        >
-                            Join as Expert
-                            <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
+                        <Link href="/join-expert" passHref>
+                            <Button
+                                size="lg"
+                                className="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+                            >
+                                Join as Expert
+                                <ArrowRight className="ml-2 h-5 w-5" />
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </div>
