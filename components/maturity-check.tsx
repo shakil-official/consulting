@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { CheckCircle, ArrowRight, BarChart3 } from "lucide-react"
+import Link from "next/link";
 
 
 const benefits = [
@@ -42,10 +43,13 @@ export function MaturityCheck() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4 font-semibold">
-                Start Your Assessment
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+
+                <Link href="/maturity-assessment" passHref>
+                    <Button size="lg" className="bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4 font-semibold">
+                        Start Your Assessment
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                </Link>
               <Button
                   size="lg"
                   variant="outline"
