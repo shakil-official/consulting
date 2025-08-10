@@ -165,7 +165,7 @@ export function AssessmentForm() {
 
     if (loading) {
         return (
-            <div className="text-center py-16 text-gray-600 font-semibold">
+            <div className="text-center py-46 text-gray-600 font-semibold">
                 Loading assessment questions...
             </div>
         )
