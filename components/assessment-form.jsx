@@ -488,32 +488,32 @@ export function AssessmentForm() {
                         {/* Radar chart showing category average scores */}
                         <RadarChartResult scores={assessmentResults.scores_by_category} />
 
-                        {/* Your detailed results list */}
-                        {groupedResults.map((category) => (
-                            <div
-                                key={category.category_id}
-                                className="border p-4 rounded-lg bg-gray-50"
-                            >
-                                <h3 className="text-2xl font-semibold mb-3">{category.category}</h3>
-                                <ul className="list-disc list-inside space-y-1">
-                                    {category.answers.map(({ question_id, answer_id }) => {
-                                        const question = assessmentQuestions
-                                            .find((cat) => cat.category_id === category.category_id)
-                                            ?.questions.find((q) => q.question_id === question_id)
+                        {/*/!* Your detailed results list *!/*/}
+                        {/*{groupedResults.map((category) => (*/}
+                        {/*    <div*/}
+                        {/*        key={category.category_id}*/}
+                        {/*        className="border p-4 rounded-lg bg-gray-50"*/}
+                        {/*    >*/}
+                        {/*        <h3 className="text-2xl font-semibold mb-3">{category.category}</h3>*/}
+                        {/*        <ul className="list-disc list-inside space-y-1">*/}
+                        {/*            {category.answers.map(({ question_id, answer_id }) => {*/}
+                        {/*                const question = assessmentQuestions*/}
+                        {/*                    .find((cat) => cat.category_id === category.category_id)*/}
+                        {/*                    ?.questions.find((q) => q.question_id === question_id)*/}
 
-                                        const answerOption = question?.options.find(
-                                            (opt) => opt.answer_id === answer_id
-                                        )
+                        {/*                const answerOption = question?.options.find(*/}
+                        {/*                    (opt) => opt.answer_id === answer_id*/}
+                        {/*                )*/}
 
-                                        return (
-                                            <li key={question_id} className="text-gray-800">
-                                                <strong>{question?.text}:</strong> {answerOption?.text || "N/A"}
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                        ))}
+                        {/*                return (*/}
+                        {/*                    <li key={question_id} className="text-gray-800">*/}
+                        {/*                        <strong>{question?.text}:</strong> {answerOption?.text || "N/A"}*/}
+                        {/*                    </li>*/}
+                        {/*                )*/}
+                        {/*            })}*/}
+                        {/*        </ul>*/}
+                        {/*    </div>*/}
+                        {/*))}*/}
 
                         <div className="text-center mt-6">
                             <Button
