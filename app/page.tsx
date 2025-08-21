@@ -24,7 +24,7 @@ export default function Home() {
                 <PanelOfExperts/>
                 {/*<WhatWeDo/>*/}
                 <WhatWeDoUpgat/>
-                <WhatWeDoUpdate/>
+                {/*<WhatWeDoUpdate/>*/}
                 <PearlProtection/>
                 <SpringeredRisks/>
                 <MaturityCheck/>

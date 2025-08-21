@@ -6,15 +6,15 @@ import Image from "next/image"
 
 const slides = [
     {
-        image: "/wedsite.jpg?height=800&width=1400",
+        image: "/website_1.jpg?height=800&width=1400",
 
     },
     {
-        image: "/wedsite.jpg?height=800&width=1400",
+        image: "/website_2.jpg?height=800&width=1400",
 
     },
     {
-        image: "/wedsite.jpg?height=800&width=1400",
+        image: "/website_3.jpg?height=800&width=1400",
 
     },
 ]

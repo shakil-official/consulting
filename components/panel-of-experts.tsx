@@ -68,19 +68,40 @@ export function PanelOfExperts() {
                         : experts.map((expert) => (
                             <div
                                 key={expert.id}
-                                className="bg-gradient-to-br from-gray-50 to-springer-dark-blue/5 rounded-3xl p-6 sm:p-8 border border-springer-dark-blue/10 hover:shadow-xl transition-all duration-300 group hover:scale-[1.03] relative overflow-hidden"
+                                className="bg-gradient-to-br from-gray-50 to-springer-dark-blue/5 rounded-3xl p-6 sm:p-8 border border-springer-dark-blue/10 hover:shadow-xl transition-all duration-300 group hover:scale-[1.03] relative overflow-hidden flex flex-col"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-br from-springer-dark-blue/5 to-springer-dark-blue-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                <div className="relative z-10">
-                                    <div className="flex items-start gap-4 mb-6">
+
+                                {/* Card Content */}
+                                <div className="relative z-10 flex-1 flex flex-col">
+                                    {/* Top: Image + Name */}
+                                    <div className="flex items-start gap-4 mb-4">
                                         <div className="relative shrink-0">
+                                            {/*<Image*/}
+                                            {/*    src={`https://shakil.rrbaghouse.com/${expert.image}`}*/}
+                                            {/*    alt={expert.name}*/}
+                                            {/*    width={100}*/}
+                                            {/*    height={100}*/}
+                                            {/*    className="rounded-2xl border-4 border-white shadow-md object-cover"*/}
+                                            {/*/>*/}
+
+                                            {/*<Image*/}
+                                            {/*    src={`https://shakil.rrbaghouse.com/${expert.image}`}*/}
+                                            {/*    alt={expert.name}*/}
+                                            {/*    width={120}*/}
+                                            {/*    height={120}*/}
+                                            {/*    className="rounded-2xl border-4 border-white shadow-md max-w-[120px] max-h-[120px] object-cover"*/}
+                                            {/*/>*/}
+
                                             <Image
                                                 src={`https://shakil.rrbaghouse.com/${expert.image}`}
                                                 alt={expert.name}
                                                 width={100}
                                                 height={100}
-                                                className="rounded-2xl border-4 border-white shadow-md group-hover:scale-105 transition-transform duration-300"
+                                                className="rounded-2xl border-4 border-white shadow-md max-w-[100px] max-h-[100px] object-cover"
                                             />
+
+
                                             <div className="absolute -bottom-2 -right-2 bg-gradient-to-br from-springer-dark-blue to-springer-dark-blue-accent rounded-full p-2 shadow-md">
                                                 <Award className="h-4 w-4 text-white" />
                                             </div>
@@ -89,17 +110,24 @@ export function PanelOfExperts() {
                                             <h3 className="text-lg font-semibold text-gray-900 group-hover:text-springer-dark-blue transition-colors leading-tight">
                                                 {expert.name}
                                             </h3>
+                                            {/*<p className="text-sm font-medium text-springer-dark-blue leading-snug mt-1">*/}
+                                            {/*    {expert.position}*/}
+                                            {/*</p>*/}
                                         </div>
                                     </div>
 
-                                    <p className="text-sm font-medium text-springer-dark-blue leading-snug mt-2 mb-4">{expert.position}</p>
+                                    {/* Description */}
+                                    <p className="text-sm text-gray-700 flex-1">{expert.position}</p>
 
-                                    <button
-                                        onClick={() => setSelectedExpert(expert)}
-                                        className="text-sm text-springer-dark-blue hover:text-white hover:bg-springer-dark-blue px-4 py-2 rounded-full border border-springer-dark-blue transition-colors duration-300"
-                                    >
-                                        Learn More
-                                    </button>
+                                    {/* Button always at bottom */}
+                                    <div className="mt-4">
+                                        <button
+                                            onClick={() => setSelectedExpert(expert)}
+                                            className="text-sm text-springer-dark-blue hover:text-white hover:bg-springer-dark-blue px-4 py-2 rounded-full border border-springer-dark-blue transition-colors duration-300 w-full"
+                                        >
+                                            Learn More
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -109,7 +137,7 @@ export function PanelOfExperts() {
             {/* Modal */}
             {selectedExpert && (
                 <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center px-4">
-                    <div className="bg-white rounded-2xl max-w-lg w-full p-6 relative shadow-xl">
+                    <div className="bg-white rounded-2xl max-w-lg w-full p-6 relative shadow-xl max-h-[90vh] overflow-y-auto">
                         <button
                             className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
                             onClick={() => setSelectedExpert(null)}
@@ -122,7 +150,7 @@ export function PanelOfExperts() {
                                 alt={selectedExpert.name}
                                 width={80}
                                 height={80}
-                                className="rounded-xl border-4 border-white shadow-md"
+                                className="rounded-xl border-4 border-white shadow-md object-cover"
                             />
                             <div>
                                 <h3 className="text-xl font-semibold text-gray-900">{selectedExpert.name}</h3>
