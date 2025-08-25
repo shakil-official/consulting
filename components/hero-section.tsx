@@ -14,7 +14,7 @@ const slides = [
 
     },
     {
-        image: "/website_3.jpg?height=800&width=1400",
+        image: "/3.jpg?height=800&width=1400",
 
     },
 ]
