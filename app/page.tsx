@@ -11,7 +11,6 @@ import {Footer} from "@/components/footer"
 import {BrandingSlider} from "@/components/branding-slider";
 import {MaturityCheck} from "@/components/maturity-check";
 import {WhatWeDoUpgat} from "@/components/WhatWeDoUpgat";
-import {WhatWeDoUpdate} from "@/components/what-we-do-update";
 
 export default function Home() {
     return (
@@ -24,7 +23,6 @@ export default function Home() {
                 <PanelOfExperts/>
                 {/*<WhatWeDo/>*/}
                 <WhatWeDoUpgat/>
-                {/*<WhatWeDoUpdate/>*/}
                 <PearlProtection/>
                 <SpringeredRisks/>
                 <MaturityCheck/>
