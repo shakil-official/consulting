@@ -9,7 +9,7 @@ export function SpringeredRisks() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch("http://localhost:9017/api/categories?reason=2") // reason=2
+        fetch("http://shakil.rrbaghouse.com/api/categories?reason=2") // reason=2
             .then(res => res.json())
             .then(data => {
                 if (data.success) setRisks(data.data)

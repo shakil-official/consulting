@@ -22,7 +22,7 @@ export function WhatWeDoUpgat() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:9017/api/categories?reason=1")
+        fetch("http://shakil.rrbaghouse.com/api/categories?reason=1")
             .then(res => res.json())
             .then(data => {
                 if (data.success) setRisks(data.data);
