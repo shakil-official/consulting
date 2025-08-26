@@ -86,19 +86,19 @@ export function SpringeredRisks() {
                                         <div className="mb-4">{renderQuillContent(risk.description)}</div>
                                     )}
 
-                                    {/* Examples */}
-                                    {risk.examples && risk.examples.length > 0 && (
-                                        <div className="space-y-1">
-                                            <div className="text-xs font-semibold text-gray-700 mb-2">Examples:</div>
-                                            {risk.examples.slice(0, 4).map((example, idx) => (
-                                                <div key={idx} className="flex items-start text-xs text-gray-600">
-                                                    <div
-                                                        className="w-1 h-1 bg-primary rounded-full mr-2 mt-1.5 flex-shrink-0"/>
-                                                    <span>{example}</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
+                                    {/*/!* Examples *!/*/}
+                                    {/*{risk.examples && risk.examples.length > 0 && (*/}
+                                    {/*    <div className="space-y-1">*/}
+                                    {/*        <div className="text-xs font-semibold text-gray-700 mb-2">Examples:</div>*/}
+                                    {/*        {risk.examples.slice(0, 4).map((example, idx) => (*/}
+                                    {/*            <div key={idx} className="flex items-start text-xs text-gray-600">*/}
+                                    {/*                <div*/}
+                                    {/*                    className="w-1 h-1 bg-primary rounded-full mr-2 mt-1.5 flex-shrink-0"/>*/}
+                                    {/*                <span>{example}</span>*/}
+                                    {/*            </div>*/}
+                                    {/*        ))}*/}
+                                    {/*    </div>*/}
+                                    {/*)}*/}
                                 </div>
 
                                 {/* Learn More */}
