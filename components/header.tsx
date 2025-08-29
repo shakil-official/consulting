@@ -28,8 +28,8 @@ export function Header() {
             subItems: [
                 { name: "Group Resilience", href: "/#story" },
                 { name: " Who We Are", href: "/experts" },
-                // { name: "Expertise & Approach", href: "/#expertise" },
-                { name: "Subject Matter Experts", href: "/#panel-of-experts" },
+                { name: "Expertise & Approach", href: "/#expertise" },
+                // { name: "Subject Matter Experts", href: "/#panel-of-experts" },
                 { name: "Strategic Pillars", href: "/strategic-pillars" },
             ],
         },
