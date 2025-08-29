@@ -13,9 +13,9 @@ export default function RadarChartResult({ scores }) {
     // ]
 
     // Map to recharts format: each item needs a "subject" label and a numeric value key
-    const data = scores.map(({ category_name, average_score }) => ({
+    const data = scores.map(({ category_name, weighted_average }) => ({
         subject: category_name,
-        A: average_score,
+        A: weighted_average,
     }))
 
     return (
