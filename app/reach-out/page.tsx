@@ -1,21 +1,22 @@
 "use client"
 
-import {useState} from "react"
-import {Header} from "@/components/header";
+import { useState } from "react"
+import { Header } from "@/components/header"
 
 export default function ReachOut() {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
-        phone: "",
-        address: "",
-        description: ""
+        role: "",
+        company: "",
+        country: "",
+        description: "",
     })
     const [loading, setLoading] = useState(false)
     const [response, setResponse] = useState<{ success: boolean; message: string } | null>(null)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({...formData, [e.target.name]: e.target.value})
+        setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -30,16 +31,32 @@ export default function ReachOut() {
                     "Content-Type": "application/json",
                     Accept: "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.role, // mapping example (your backend accepts phone, using it for role)
+                    address: `${formData.company}, ${formData.country}`, // combine company + country as address
+                    description: formData.description,
+                    role: formData.role,
+                    company: formData.company,
+                    country: formData.country,
+                }),
             })
 
             const data = await res.json()
             setResponse(data)
             if (data.success) {
-                setFormData({name: "", email: "", phone: "", address: "", description: ""})
+                setFormData({
+                    name: "",
+                    email: "",
+                    role: "",
+                    company: "",
+                    country: "",
+                    description: "",
+                })
             }
         } catch (error) {
-            setResponse({success: false, message: "Something went wrong. Please try again."})
+            setResponse({ success: false, message: "Something went wrong. Please try again." })
         } finally {
             setLoading(false)
         }
@@ -47,11 +64,17 @@ export default function ReachOut() {
 
     return (
         <>
-            <Header/>
-            <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-                <div className="w-full max-w-lg bg-white rounded-xl shadow-lg p-8">
-                    <h2 className="text-2xl font-bold text-center mb-6">Reach Out to Us</h2>
+            <Header />
+            <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-16">
+                <div className="w-full max-w-2xl bg-white rounded-xl shadow-lg p-8">
+                    {/* Page Title */}
+                    <h2 className="text-3xl font-bold text-center mb-3">Reach Out</h2>
+                    <p className="text-center text-gray-600 mb-8">
+                        Ready to build a resilient future? Contact us today to discuss how Group Resilience can help your
+                        organization prepare, respond, and transform.
+                    </p>
 
+                    {/* Response Message */}
                     {response && (
                         <div
                             className={`mb-4 p-3 rounded ${
@@ -62,13 +85,14 @@ export default function ReachOut() {
                         </div>
                     )}
 
+                    {/* Contact Form */}
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <input
                             type="text"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            placeholder="Your Name"
+                            placeholder="Full Name"
                             required
                             className="w-full border rounded px-3 py-2"
                         />
@@ -78,25 +102,35 @@ export default function ReachOut() {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            placeholder="Your Email"
+                            placeholder="Email Address"
+                            required
                             className="w-full border rounded px-3 py-2"
                         />
 
                         <input
                             type="text"
-                            name="phone"
-                            value={formData.phone}
+                            name="role"
+                            value={formData.role}
                             onChange={handleChange}
-                            placeholder="Your Phone"
+                            placeholder="Current Role / Title"
                             className="w-full border rounded px-3 py-2"
                         />
 
                         <input
                             type="text"
-                            name="address"
-                            value={formData.address}
+                            name="company"
+                            value={formData.company}
                             onChange={handleChange}
-                            placeholder="Your Address"
+                            placeholder="Organization / Company (optional)"
+                            className="w-full border rounded px-3 py-2"
+                        />
+
+                        <input
+                            type="text"
+                            name="country"
+                            value={formData.country}
+                            onChange={handleChange}
+                            placeholder="Country / Region"
                             className="w-full border rounded px-3 py-2"
                         />
 
@@ -113,14 +147,13 @@ export default function ReachOut() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+                            className="w-full  bg-springer-dark-blue hover:bg-springer-dark-blue-accent text-white py-3 rounded font-medium  transition"
                         >
                             {loading ? "Sending..." : "Send Message"}
                         </button>
                     </form>
                 </div>
             </div>
-
         </>
     )
 }

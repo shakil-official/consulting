@@ -2,7 +2,8 @@
 
 import {ArrowRight, Building, Cloud, FileText, Globe, Leaf, Shield, Star, Vote, Zap} from "lucide-react";
 import {useEffect, useState} from "react";
-import parse from "html-react-parser"; // npm install html-react-parser
+import parse from "html-react-parser";
+import {renderQuillContent} from "@/components/renderQuillContent"; // npm install html-react-parser
 
 // icon mapping
 const iconMap = {
@@ -76,26 +77,10 @@ export function WhatWeDoUpgat() {
                                         </div>
 
                                         <div className="space-y-1">
-                                            {parse(risk.description, {
-                                                replace: domNode => {
-                                                    if (domNode.name === "li") {
-                                                        return (
-                                                            <div className="flex items-start text-xs text-gray-600 mb-2">
-                                                                <div className="w-1 h-1 bg-primary rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
-                                                                <span>{domNode.children[0].data}</span>
-                                                            </div>
-                                                        );
-                                                    }
-                                                    if (domNode.name === "p") {
-                                                        return <p className="text-xs text-gray-600">{domNode.children[0]?.data}</p>;
-                                                    }
-                                                }
-                                            })}
+                                            {risk.description && (
+                                                <div className="mb-4">{renderQuillContent(risk.description)}</div>
+                                            )}
                                         </div>
-
-
-
-
                                     </div>
 
                                     {/* Learn More */}

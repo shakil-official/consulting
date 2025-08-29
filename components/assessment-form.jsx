@@ -117,12 +117,34 @@ export function AssessmentForm() {
         setSubmitError(null)
 
         try {
+            // const formattedAnswers = Object.entries(data.answers).map(
+            //     ([question_id, answer_id]) => ({
+            //         question_id: Number(question_id),
+            //         answer_id: Number(answer_id),
+            //     })
+            // )
+
             const formattedAnswers = Object.entries(data.answers).map(
-                ([question_id, answer_id]) => ({
-                    question_id: Number(question_id),
-                    answer_id: Number(answer_id),
-                })
+                ([question_id, answer_id]) => {
+                    const questionIdNum = Number(question_id)
+                    // Find the question in assessmentQuestions
+                    let categoryId = null
+                    for (const cat of assessmentQuestions) {
+                        const q = cat.questions.find((q) => q.question_id === questionIdNum)
+                        if (q) {
+                            categoryId = cat.category_id
+                            break
+                        }
+                    }
+
+                    return {
+                        question_id: questionIdNum,
+                        answer_id: Number(answer_id),
+                        category_id: categoryId, // include category
+                    }
+                }
             )
+
 
             const response = await fetch("https://shakil.rrbaghouse.com/api/assessment-submit", {
                 method: "POST",
