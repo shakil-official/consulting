@@ -560,16 +560,17 @@ export default function EngagementFormPage() {
     ]
 
     const partnershipOptions = [
-        "Information Only",
-        "Contributor to Content",
-        "Independent SME Ready to Work with Us",
-        "Commercial Partners Willing to Work with Us on Specific Missions",
-        "Academics Who Want to Support Your Movement",
-        "Mentorship Opportunities",
-        "Training and Workshop Facilitation",
-        "Research Collaboration",
-        "Advocacy and Policy Development",
-        "Networking and Community Building"
+        "Information only",
+        "Independent SME ready to work with us",
+        "Commercial partners willing to work with us on specific missions",
+        "Academics who want to support our movement",
+
+        // "Contributor to Content",
+        // "Mentorship Opportunities",
+        // "Training and Workshop Facilitation",
+        // "Research Collaboration",
+        // "Advocacy and Policy Development",
+        // "Networking and Community Building"
     ]
 
     // Handle text input changes and file upload
