@@ -4,6 +4,7 @@ import {ArrowRight, Building, Cloud, FileText, Globe, Leaf, Shield, Star, Vote, 
 import {useEffect, useState} from "react";
 import parse from "html-react-parser";
 import {renderQuillContent} from "@/components/renderQuillContent"; // npm install html-react-parser
+import { useRouter } from "next/navigation"
 
 // icon mapping
 const iconMap = {
@@ -21,6 +22,7 @@ const iconMap = {
 export function WhatWeDoUpgat() {
     const [risks, setRisks] = useState([]);
     const [loading, setLoading] = useState(true);
+    const router = useRouter()
 
     useEffect(() => {
         fetch("https://shakil.rrbaghouse.com/api/categories?reason=1")
@@ -33,6 +35,8 @@ export function WhatWeDoUpgat() {
 
     const handleLearnMore = (categoryId) => {
         console.log("Learn more clicked for category:", categoryId);
+        router.push(`/categories/${categoryId}`)
+
     };
 
     return (
@@ -48,8 +52,7 @@ export function WhatWeDoUpgat() {
                         className="bg-gradient-to-r from-springer-dark-blue to-springer-dark-blue-accent bg-clip-text text-transparent">Do</span>
                     </h2>
                     <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                        We provide comprehensive consulting services that help organizations build resilience, manage
-                        risks effectively, and achieve sustainable growth in an uncertain world.
+                        Group Resilience delivers a comprehensive suite of services built around the Group Resilience Model (GRM) and SPRINGERED threat vectors. Whether you're looking to enhance your existing resilience framework or respond to emerging incidents, we can support you at any stage of your resilience journey. Start by taking our free resilience maturity assessment to identify where you stand.
                     </p>
                 </div>
 
