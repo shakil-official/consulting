@@ -100,19 +100,20 @@ export function Footer() {
                         <div className="space-y-4 text-gray-300">
                             <div className="flex items-center space-x-3">
                                 <Mail className="h-5 w-5 text-blue-400"/>
-                                <span>info@springconsult.com</span>
+                                <span>information@groupresilience.com</span>
                             </div>
-                            <div className="flex items-center space-x-3">
-                                <Phone className="h-5 w-5 text-blue-400"/>
-                                <span>+1 (555) 123-4567</span>
-                            </div>
+                            {/*<div className="flex items-center space-x-3">*/}
+                            {/*    <Phone className="h-5 w-5 text-blue-400"/>*/}
+                            {/*    <span>+1 (555) 123-4567</span>*/}
+                            {/*</div>*/}
                             <div className="flex items-start space-x-3">
                                 <MapPin className="h-5 w-5 text-blue-400 mt-0.5"/>
-                                <span>
-                  123 Business District
-                  <br/>
-                  New York, NY 10001
-                </span>
+                                <span>Group Resilience LTD
+                                <br/>
+                                    167-169 Great Portland Street 5th Floor London W1W 5PF
+                                <br/>
+                                    Group Resilience SA - Switzerland
+                                </span>
                             </div>
                         </div>
                     </div>
