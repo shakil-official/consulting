@@ -5,34 +5,61 @@ import {
     Radar, RadarChart, PolarGrid,
     PolarAngleAxis, PolarRadiusAxis,
     ResponsiveContainer, Tooltip,
+    Dot,
 } from "recharts"
 
 export default function RadarChartResult({ scores }) {
-    // scores = [
-    //   { category_id, category_name, average_score, total_score, question_count }
-    // ]
+    // Professional, readable colors
+    const categoryColors = [
+        "#2563EB", // blue
+        "#10B981", // green
+        "#F59E0B", // amber
+        "#EF4444", // red
+        "#8B5CF6", // violet
+        "#0EA5E9", // cyan
+        "#F43F5E", // pink
+        "#64748B", // slate
+    ]
 
-    // Map to recharts format: each item needs a "subject" label and a numeric value key
-    const data = scores.map(({ category_name, weighted_average }) => ({
+    // Map scores to Recharts data format
+    const data = scores.map(({ category_name, weighted_average }, index) => ({
         subject: category_name,
         A: weighted_average,
+        color: categoryColors[index % categoryColors.length], // assign color per category
     }))
+
+    // Custom dot renderer to color each vertex
+    const renderCustomDot = (props) => {
+        const { cx, cy, payload } = props
+        return (
+            <circle cx={cx} cy={cy} r={5} fill={payload.color} stroke="#fff" strokeWidth={1} />
+        )
+    }
 
     return (
         <div style={{ width: "100%", height: 400 }}>
             <ResponsiveContainer>
                 <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-                    <PolarGrid />
-                    <PolarAngleAxis dataKey="subject" />
-                    <PolarRadiusAxis angle={30} domain={[0, "dataMax"]} />
+                    <PolarGrid stroke="#CBD5E1" /> {/* light gray grid */}
+                    <PolarAngleAxis dataKey="subject" stroke="#334155" /> {/* labels */}
+                    <PolarRadiusAxis angle={30} domain={[0, "dataMax"]} stroke="#334155" />
+
                     <Radar
                         name="Average Score"
                         dataKey="A"
-                        stroke="#2563EB"  // blue stroke
-                        fill="#3B82F6"    // blue fill
-                        fillOpacity={0.6}
+                        stroke="#2563EB"
+                        fill="#3B82F6"
+                        fillOpacity={0.3}
+                        dot={renderCustomDot} // use custom colored dots
                     />
-                    <Tooltip />
+
+                    <Tooltip
+                        contentStyle={{
+                            backgroundColor: "#F8FAFC",
+                            border: "1px solid #CBD5E1",
+                            color: "#111827",
+                        }}
+                    />
                 </RadarChart>
             </ResponsiveContainer>
         </div>
