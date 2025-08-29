@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { Award, X } from "lucide-react"
+import {useEffect, useState} from "react"
+import {Award, X} from "lucide-react"
 import Image from "next/image"
 
 interface Expert {
@@ -37,24 +37,44 @@ export function PanelOfExperts() {
     }, [])
 
     return (
-        <section id="panel-of-experts" className="py-24 bg-white relative overflow-hidden">
+        <section id="panel-of-experts" className="py-28 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 lg:px-6 relative z-10">
                 <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-                        Subject Matter{" "}
-                        <span className="bg-gradient-to-r from-springer-dark-blue to-springer-dark-blue-accent bg-clip-text text-transparent">
-                            Experts
+                        Who {" "}
+                        <span
+                            className="bg-gradient-to-r from-springer-dark-blue to-springer-dark-blue-accent bg-clip-text text-transparent">
+                            We Are
                         </span>
                     </h2>
-                    <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                        Our team consists of global specialists with deep real-world experience—not just consultants,
-                        but practitioners and executive leaders.
+                    <p className="text-lg md:text-xl text-gray-600  mx-auto" style={{textAlign: "justify"}}>
+                        A group of world-recognized specialists, we have experience operating in over 100 countries and
+                        have managed more than 500 local and international crises, all of which have had a global impact
+                        on multibillion-dollar companies.Our real-world experience spans boardrooms to remote industrial
+                        sites, servicing sectors from banking and heavy industry to transportation, public institutions,
+                        and defense. Our members are selected based on their expertise, integrity, track record, and
+                        no-bullshit approach. Each of our SPRINGER threats is supported by experts with a minimum of 15
+                        years of proven expertise.
+                        Our team boasts an extraordinary diversity of skills and backgrounds, including military,
+                        scientific, economic, legal, sociopolitical, criminological, linguistic, and more. This varied
+                        expertise enables us to approach challenges from multiple perspectives, ensuring innovative and
+                        effective solutions. We are not solely military-focused; instead, we pride ourselves on the
+                        unique blend of knowledge and academic backgrounds that set us apart from others in the field.
+                        The founder, his executive team and the board of directors, are all invested in the selection
+                        process and vouch for each individual member. This expertise ensures we know what works at every
+                        tier—and how to speak the language of both board members and frontline teams.For reasons of
+                        discretion, we do not publicize our members' CVs on this website. However, if clients are
+                        interested in obtaining more details about our partners, they are welcome to reach out directly.
                     </p>
                 </div>
 
-                <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+                <div
+                    className={`grid gap-10 
+        ${experts.length === 2 ? "sm:grid-cols-2 justify-center place-items-center" : "sm:grid-cols-2 lg:grid-cols-4"}
+    `}
+                >
                     {loading
-                        ? Array.from({ length: 4 }).map((_, i) => (
+                        ? Array.from({length: 4}).map((_, i) => (
                             <div
                                 key={i}
                                 className="rounded-3xl p-6 sm:p-8 border border-gray-200 animate-pulse bg-gray-100 h-64"
@@ -68,31 +88,16 @@ export function PanelOfExperts() {
                         : experts.map((expert) => (
                             <div
                                 key={expert.id}
-                                className="bg-gradient-to-br from-gray-50 to-springer-dark-blue/5 rounded-3xl p-6 sm:p-8 border border-springer-dark-blue/10 hover:shadow-xl transition-all duration-300 group hover:scale-[1.03] relative overflow-hidden flex flex-col"
+                                className="bg-gradient-to-br from-gray-50 to-springer-dark-blue/5 rounded-3xl p-6 sm:p-8 border border-springer-dark-blue/10 hover:shadow-xl transition-all duration-300 group hover:scale-[1.03] relative overflow-hidden flex flex-col max-w-sm w-full"
                             >
-                                <div className="absolute inset-0 bg-gradient-to-br from-springer-dark-blue/5 to-springer-dark-blue-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                <div
+                                    className="absolute inset-0 bg-gradient-to-br from-springer-dark-blue/5 to-springer-dark-blue-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
 
                                 {/* Card Content */}
                                 <div className="relative z-10 flex-1 flex flex-col">
                                     {/* Top: Image + Name */}
                                     <div className="flex items-start gap-4 mb-4">
                                         <div className="relative shrink-0">
-                                            {/*<Image*/}
-                                            {/*    src={`https://shakil.rrbaghouse.com/${expert.image}`}*/}
-                                            {/*    alt={expert.name}*/}
-                                            {/*    width={100}*/}
-                                            {/*    height={100}*/}
-                                            {/*    className="rounded-2xl border-4 border-white shadow-md object-cover"*/}
-                                            {/*/>*/}
-
-                                            {/*<Image*/}
-                                            {/*    src={`https://shakil.rrbaghouse.com/${expert.image}`}*/}
-                                            {/*    alt={expert.name}*/}
-                                            {/*    width={120}*/}
-                                            {/*    height={120}*/}
-                                            {/*    className="rounded-2xl border-4 border-white shadow-md max-w-[120px] max-h-[120px] object-cover"*/}
-                                            {/*/>*/}
-
                                             <Image
                                                 src={`https://shakil.rrbaghouse.com/${expert.image}`}
                                                 alt={expert.name}
@@ -101,18 +106,15 @@ export function PanelOfExperts() {
                                                 className="rounded-2xl border-4 border-white shadow-md max-w-[100px] max-h-[100px] object-cover"
                                             />
 
-
-                                            <div className="absolute -bottom-2 -right-2 bg-gradient-to-br from-springer-dark-blue to-springer-dark-blue-accent rounded-full p-2 shadow-md">
-                                                <Award className="h-4 w-4 text-white" />
+                                            <div
+                                                className="absolute -bottom-2 -right-2 bg-gradient-to-br from-springer-dark-blue to-springer-dark-blue-accent rounded-full p-2 shadow-md">
+                                                <Award className="h-4 w-4 text-white"/>
                                             </div>
                                         </div>
                                         <div className="flex-1 min-w-0 self-end">
                                             <h3 className="text-lg font-semibold text-gray-900 group-hover:text-springer-dark-blue transition-colors leading-tight">
                                                 {expert.name}
                                             </h3>
-                                            {/*<p className="text-sm font-medium text-springer-dark-blue leading-snug mt-1">*/}
-                                            {/*    {expert.position}*/}
-                                            {/*</p>*/}
                                         </div>
                                     </div>
 
@@ -132,17 +134,19 @@ export function PanelOfExperts() {
                             </div>
                         ))}
                 </div>
+
             </div>
 
             {/* Modal */}
             {selectedExpert && (
                 <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center px-4">
-                    <div className="bg-white rounded-2xl max-w-lg w-full p-6 relative shadow-xl max-h-[90vh] overflow-y-auto">
+                    <div
+                        className="bg-white rounded-2xl max-w-lg w-full p-6 relative shadow-xl max-h-[90vh] overflow-y-auto">
                         <button
                             className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
                             onClick={() => setSelectedExpert(null)}
                         >
-                            <X className="h-5 w-5" />
+                            <X className="h-5 w-5"/>
                         </button>
                         <div className="flex items-center gap-4 mb-4">
                             <Image

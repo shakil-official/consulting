@@ -44,14 +44,9 @@ export function OurStory() {
 
                             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                                 <p className="text-xl text-gray-700 font-medium">
-                                    At Group Resilience, we empower CEOs, Boards, Executive Suites, and organizations to prepare for and thrive amid uncertainty. We enable our clients to mitigate risks, drive sustainable growth, build resilient futures, and generate competitive advantages.
-                                </p>
-                                <p>
-                                    From managing resource constraints to embedding resilience across every business function, we deliver systems that add value before, during, and after crises—building trust with all stakeholders.
-                                </p>
-                                <p>
-                                    We provide tailored risk solutions—whether as specialized expertise or fully embedded strategies—for the most pressing business challenges and controversies.
-                                </p>
+                                    Group Resilience: Building Organizations for a Competitive Edge
+                                    Group Resilience is a premier partner dedicated to creating future-ready organizations that transform systemic risks into strategic benefits. We empower CEOs and senior executives with cutting-edge technology and strategies tested in over 500 scenarios across various industries worldwide. Our approach equips organizations not just to navigate disruption but to seize it as a competitive advantage.</p>
+
                                 {/*<p className="text-primary font-medium">*/}
                                 {/*    We provide tailored risk solutions—whether as specialized expertise or fully embedded strategies—for the most pressing business challenges and controversies.*/}
                                 {/*</p>*/}

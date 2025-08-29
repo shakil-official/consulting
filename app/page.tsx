@@ -20,7 +20,7 @@ export default function Home() {
                 <HeroSection/>
                 <OurStory/>
                 <ExpertiseApproach/>
-                <PanelOfExperts/>
+                {/*<PanelOfExperts/>*/}
                 {/*<WhatWeDo/>*/}
                 <WhatWeDoUpgat/>
                 <PearlProtection/>

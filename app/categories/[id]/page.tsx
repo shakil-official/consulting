@@ -1,7 +1,7 @@
 import {Header} from "@/components/header"
 import {ChevronRight, FileText, Clock, Users} from "lucide-react"
-import {renderQuillContent} from "@/components/renderQuillContent";
-import {renderQuillContentUP} from "@/components/renderQuillContentUP";
+
+import Link from "next/link"
 
 interface SubCategory {
     id: number
@@ -70,26 +70,19 @@ export default async function CategoryPage({
                         <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-8">
                             <span>Home</span>
                             <ChevronRight className="w-4 h-4"/>
-                            <span>Categories</span>
+                            <span><Link href='/#whatWeDoNow'>
+                                Servies
+                            </Link></span>
                             <ChevronRight className="w-4 h-4"/>
                             <span className="text-gray-900 font-medium">{data.title}</span>
                         </nav>
 
                         <div
                             className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
-                            <div className="relative p-8 lg:p-12 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+                            <div className="relative p-8 lg:p-12 bg-gradient-to-r from-gray-900 to-gray-800 text-white bg-transparent bg-gradient-to-br from-blue-900/80 via-indigo-900/70 to-purple-900/60">
                                 <div className="absolute inset-0 bg-pattern opacity-30"/>
 
                                 <div className="relative z-10 flex items-start gap-6">
-                                    <div
-                                        className="w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-bold shadow-lg"
-                                        style={{
-                                            backgroundColor: data.bgColor || '#3B82F6',
-                                            color: data.color || '#FFFFFF'
-                                        }}
-                                    >
-                                    </div>
-
                                     <div className="flex-1">
                                         <h1 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                                             {data.title}
@@ -101,10 +94,10 @@ export default async function CategoryPage({
                             <div className="p-8 lg:p-12">
                                 <div className="flex items-center justify-between mb-8">
                                     <h2 className="text-3xl font-bold text-gray-900">
-                                        Sub Categories
+                                        Servies
                                     </h2>
                                     <div className="text-sm text-gray-500 bg-gray-100 px-4 py-2 rounded-full">
-                                        {data.sub_category.length} Categories
+                                        {data.sub_category.length} Servies
                                     </div>
                                 </div>
 
@@ -114,8 +107,8 @@ export default async function CategoryPage({
                                             className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                             <FileText className="w-10 h-10 text-gray-400"/>
                                         </div>
-                                        <h3 className="text-xl font-semibold text-gray-700 mb-2">No Sub Categories</h3>
-                                        <p className="text-gray-500">This category doesn't have any sub categories
+                                        <h3 className="text-xl font-semibold text-gray-700 mb-2">No Servies</h3>
+                                        <p className="text-gray-500">This category doesn't have Servies
                                             yet.</p>
                                     </div>
                                 ) : (
