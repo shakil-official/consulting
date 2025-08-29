@@ -30,7 +30,6 @@ export default function Home() {
                 <BrandingSlider
                     title="Ours Clients & Partners"
                     subtitle=""
-                    showControls={true}
                     autoPlay={true}
                     speed={45}
                 />

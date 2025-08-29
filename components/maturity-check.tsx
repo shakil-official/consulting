@@ -55,7 +55,7 @@ export function MaturityCheck() {
                   variant="outline"
                   className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4 bg-transparent"
               >
-                Schedule Consultation
+                  <Link href="/reach-out">Schedule Consultation</Link>
               </Button>
             </div>
 

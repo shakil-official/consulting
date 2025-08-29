@@ -359,9 +359,12 @@ export function Header() {
                     </nav>
 
                     <div className="hidden lg:flex items-center space-x-4">
-                        <Button className="bg-gradient-to-r from-blue-900 to-indigo-900 hover:from-blue-700 hover:to-indigo-800 font-medium px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                        <Link
+                            href="/reach-out"
+                            className="inline-block rounded-lg bg-gradient-to-r from-blue-900 to-indigo-900 hover:from-blue-700 hover:to-indigo-800 font-medium text-white px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                        >
                             Reach out
-                        </Button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -426,9 +429,9 @@ export function Header() {
                                 )}
                             </Accordion>
                             <div className="flex flex-col space-y-3 pt-4 px-4">
-                                <Button className="w-full bg-gradient-to-r from-blue-900 to-indigo-900">
+                                <Link href={"reach-out"} className="w-full bg-gradient-to-r from-blue-900 to-indigo-900">
                                     Reach out
-                                </Button>
+                                </Link>
                             </div>
                         </nav>
                     </div>
