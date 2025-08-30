@@ -9,14 +9,7 @@ const data = {
             action:
                 "Establish basic risk identification processes, clarify responsibilities, and link risk activities to resilience planning.",
             support: [
-                "ERM design, implementation",
-                "Threat & Risk assessment",
-                "Investigations",
-                "Lessons learnt",
-                "OSINT monitoring",
-                "GSOC AI",
-                "Stakeholder mapping",
-                "Sites Mapping Application",
+
             ],
         },
         {
@@ -43,14 +36,7 @@ const data = {
             action:
                 "Implement systematic, organization-wide risk management with proactive monitoring, clear ownership, and continuous data-driven improvement.",
             support: [
-                "ERM design, implementation",
-                "Threat & Risk assessment",
-                "Investigations",
-                "Lessons learnt",
-                "OSINT monitoring",
-                "GSOC AI",
-                "Stakeholder mapping",
-                "Sites Mapping Application",
+
             ],
         },
     ],
@@ -62,11 +48,7 @@ const data = {
             action:
                 "Define basic governance structure, assign roles, ensure minimal compliance, and raise staff awareness through initial training and communication.",
             support: [
-                "Governance design / review",
-                "Team design",
-                "Head hunting (team hiring)",
-                "Background check (team vetting)",
-                "Executive coaching",
+
             ],
         },
         {
@@ -90,11 +72,7 @@ const data = {
             action:
                 "Integrate resilience into strategic planning and operations, maintain proactive compliance and updated plans, and embed resilience awareness organization-wide through continuous training and monitoring.",
             support: [
-                "Governance design / review",
-                "Team design",
-                "Head hunting (team hiring)",
-                "Background check (team vetting)",
-                "Executive coaching",
+
             ],
         },
     ],
@@ -106,14 +84,7 @@ const data = {
             action:
                 "Define resilience roles and responsibilities, develop basic plans for crisis and business continuity, initiate staff training, and establish formal emergency procedures.",
             support: [
-                "Training",
-                "Exercise",
-                "Resilience AI chatbot 'Ask Richard'",
-                "Business continuity planning",
-                "Emergency response planning",
-                "Third party resilience",
-                "Crisis Management Framework and Plan",
-                "Live crisis support / Emergency response support (live incidents)",
+
             ],
         },
         {
@@ -140,14 +111,7 @@ const data = {
             action:
                 "Embed resilience into all operations with clear governance, maintain regularly tested and updated plans, ensure ongoing staff training, use BIA to prioritize recovery, and proactively manage third-party risks through continuous assessment.",
             support: [
-                "Training",
-                "Exercise",
-                "Resilience AI chatbot 'Ask Richard'",
-                "Business continuity planning",
-                "Emergency response planning",
-                "Third party resilience",
-                "Crisis Management Framework and Plan",
-                "Live crisis support / Emergency response support (live incidents)",
+
             ],
         },
     ],
@@ -159,12 +123,7 @@ const data = {
             action:
                 "Establish clear leadership accountability, secure basic resources, implement formal audits, assign document owners, define KPIs, and start documenting lessons learned to begin tracking and improving resilience.",
             support: [
-                "Resilience KPIs",
-                "Resilience maturity assessment",
-                "Audit & Assurance",
-                "Compliance with international standards (ISO 31000, 22301, 27001)",
-                "Resilience certification (for organisations)",
-                "Resilience certification (for people)",
+
             ],
         },
         {
@@ -189,12 +148,7 @@ const data = {
             action:
                 "Maintain strong leadership commitment, fully integrate audit outcomes, optimize KPIs for proactive management, embed continuous learning from lessons, and use data-driven insights to enhance resilience organization-wide.",
             support: [
-                "Resilience KPIs",
-                "Resilience maturity assessment",
-                "Audit & Assurance",
-                "Compliance with international standards (ISO 31000, 22301, 27001)",
-                "Resilience certification (for organisations)",
-                "Resilience certification (for people)",
+
             ],
         },
     ],
@@ -202,47 +156,64 @@ const data = {
 
 export default function ResilienceTable() {
     return (
-        <div className="p-6">
-            <div className="overflow-x-auto rounded-xl shadow-lg">
-                {Object.keys(data).map((category) => (
-                    <div key={category} className="mb-10">
-                        <h2 className="text-xl font-bold bg-gray-100 px-4 py-2 border border-gray-300 rounded-t-lg">
-                            {category}
-                        </h2>
-                        <table className="w-full border-collapse">
-                            <thead>
-                            <tr className="bg-gray-200 text-left">
-                                <th className="p-3 border">Maturity Level</th>
-                                <th className="p-3 border">Maturity Descriptor</th>
-                                <th className="p-3 border">Action to improve maturity level</th>
-                                <th className="p-3 border">Group Resilience Model designed to support you</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {data[category].map((row, idx) => (
-                                <tr
-                                    key={idx}
-                                    className={`${
-                                        idx % 2 === 0 ? "bg-white" : "bg-gray-50"
-                                    } hover:bg-blue-50 transition`}
-                                >
-                                    <td className="p-3 border font-semibold">{row.level}</td>
-                                    <td className="p-3 border">{row.descriptor}</td>
-                                    <td className="p-3 border">{row.action}</td>
-                                    <td className="p-3 border">
-                                        <ul className="list-disc pl-5">
-                                            {row.support.map((item, i) => (
-                                                <li key={i}>{item}</li>
-                                            ))}
-                                        </ul>
+        <>
+            <div className="p-6">
+                <div className="overflow-x-auto rounded-xl shadow-lg">
+                    <h2 className="text-xl font-bold bg-gray-100 px-4 py-2 border border-gray-300 rounded-t-lg text-center">
+                        Maturity Development Companion with Relevant Services of Group Resilience
+                    </h2>
+
+                    <table className="w-full border-collapse table-fixed">
+                        <thead>
+                        <tr className="bg-gray-200 text-left">
+                            <th className="p-3 border w-[10%]">Maturity Level</th>
+                            <th className="p-3 border w-[20%]">Maturity Descriptor</th>
+                            <th className="p-3 border w-[30%]">Action to improve maturity level</th>
+                            <th className="p-3 border w-[40%]">
+                                Group Resilience Model designed to support you
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {Object.keys(data).map((category) => (
+                            <React.Fragment key={category}>
+                                {/* Category Header Row */}
+                                <tr>
+                                    <td colSpan={4} className="bg-gray-100 font-bold px-4 py-2 border">
+                                        {category}
                                     </td>
                                 </tr>
-                            ))}
-                            </tbody>
-                        </table>
-                    </div>
-                ))}
+
+                                {/* Category Rows */}
+                                {data[category].map((row, idx) => (
+                                    <tr
+                                        key={idx}
+                                        className={`${
+                                            idx % 2 === 0 ? "bg-white" : "bg-gray-50"
+                                        } hover:bg-blue-50 transition`}
+                                    >
+                                        <td className="p-3 border w-[10%] font-semibold">{row.level}</td>
+                                        <td className="p-3 border w-[15%] break-words">{row.descriptor}</td>
+                                        <td className="p-3 border w-[20%] break-words">{row.action}</td>
+                                        <td className="p-3 border w-[55%] break-words">
+                                            <ul className="list-disc pl-5">
+                                                {row.support.length > 0 ? (
+                                                    row.support.map((item, i) => <li key={i}>{item}</li>)
+                                                ) : (
+                                                    <span className="text-gray-400 italic"></span>
+                                                )}
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </React.Fragment>
+                        ))}
+                        </tbody>
+                    </table>
+
+
+                </div>
             </div>
-        </div>
+        </>
     );
 }

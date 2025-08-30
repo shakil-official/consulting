@@ -74,6 +74,12 @@ export function AssessmentForm() {
             })
     }, [])
 
+    useEffect(() => {
+        if (step === 3) {
+            window.scrollTo({ top: 0, behavior: "smooth" })
+        }
+    }, [step])
+
     // Form hooks
     const {
         control: personalControl,
@@ -190,16 +196,33 @@ export function AssessmentForm() {
 
     if (loading) {
         return (
-            <div className="text-center py-46 text-gray-600 font-semibold">
-                Loading assessment questions...
+            <div className="flex items-center justify-center h-screen bg-gray-50">
+                <div className="w-full max-w-3xl p-6">
+                    <div className="space-y-6 animate-pulse">
+                        {/* Header */}
+                        <div className="h-8 bg-gray-200 rounded w-2/3 mx-auto"></div>
+
+                        {/* Question Blocks */}
+                        <div className="space-y-4">
+                            <div className="h-6 bg-gray-200 rounded w-1/2"></div>
+                            <div className="h-10 bg-gray-200 rounded"></div>
+                            <div className="h-10 bg-gray-200 rounded"></div>
+                            <div className="h-10 bg-gray-200 rounded"></div>
+                        </div>
+
+                        {/* Button Placeholder */}
+                        <div className="h-12 bg-gray-200 rounded w-32 mx-auto"></div>
+                    </div>
+                </div>
             </div>
+
         )
     }
 
     if (error) {
         return (
             <div className="text-center py-10 text-red-600 font-semibold">
-                Error: {error}
+                {/*Error: {error}*/}
             </div>
         )
     }
@@ -214,7 +237,7 @@ export function AssessmentForm() {
     }
 
     return (
-        <div className=" bg-gray-100 flex items-center justify-center py-12 px-4">
+        <div className="min-h-screen bg-gray-100 flex items-center justify-center py-12 px-4" style={{ marginTop : "40px"}}>
             {step === 1 && (
                 <Card className="w-full max-w-2xl mx-auto shadow-lg">
                     <CardHeader>
@@ -347,6 +370,7 @@ export function AssessmentForm() {
                                                 <SelectItem value="energy">Energy</SelectItem>
                                                 <SelectItem value="government">Government</SelectItem>
                                                 <SelectItem value="logistics">Logistics</SelectItem>
+                                                <SelectItem value="logistics">Others</SelectItem>
                                             </SelectContent>
                                         </Select>
                                     )}
@@ -517,6 +541,15 @@ export function AssessmentForm() {
 
                         <MaturityTable />
 
+                        <div className="text-center mt-6">
+                            <Button
+                                onClick={resetAll}
+                                className="bg-springer-dark-blue hover:bg-springer-dark-blue-accent"
+                            >
+                                Start New Assessment
+                            </Button>
+                        </div>
+
                         <ResilienceTable />
 
                         {/*<RadarChartResult scores={ [*/}
@@ -577,14 +610,7 @@ export function AssessmentForm() {
                         {/*    </div>*/}
                         {/*))}*/}
 
-                        <div className="text-center mt-6">
-                            <Button
-                                onClick={resetAll}
-                                className="bg-springer-dark-blue hover:bg-springer-dark-blue-accent"
-                            >
-                                Start New Assessment
-                            </Button>
-                        </div>
+
                     </div>
                 </Card>
             )}
