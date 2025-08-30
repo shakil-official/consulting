@@ -45,7 +45,7 @@ export function ExpertiseApproach() {
               Approach
             </span>
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">At Group Resilience, we deliver more than advice—we combine operational experience, strategic expertise, and global insight to shape real resilience outcomes. Our team is composed of internationally recognized specialists who have led resilience from the inside—bringing first-hand knowledge, not just external perspective.</p>
+                    <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">A globally experienced team of crisis specialists, we’ve operated in over 100 countries, resolving over 500 local and international crises impacting multibillion-dollar companies. Our experts—handpicked for integrity and proven expertise—bring diverse skills from military, legal, economic, and scientific fields. Trusted at every level, we deliver clear, results-driven solutions from boardrooms to the front lines.</p>
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">

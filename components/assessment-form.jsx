@@ -24,6 +24,9 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import RadarChartResult from "@/components/RadarChartResult";
+import OverallMaturity from "@/components/OverallMaturity";
+import MaturityTable from "@/components/MaturityTable";
+import ResilienceTable from "@/components/ResilienceTable";
 
 // Validation schemas
 const personalDetailsSchema = z.object({
@@ -211,7 +214,7 @@ export function AssessmentForm() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center py-12 px-4">
+        <div className=" bg-gray-100 flex items-center justify-center py-12 px-4">
             {step === 1 && (
                 <Card className="w-full max-w-2xl mx-auto shadow-lg">
                     <CardHeader>
@@ -495,10 +498,10 @@ export function AssessmentForm() {
             )}
 
             {step === 3 && (
-                <Card className="w-full max-w-3xl mx-auto shadow-lg p-6">
+                <Card className="w-full max-w-2.5 mx-auto shadow-lg p-6">
                     <CardHeader>
                         <CardTitle className="text-3xl font-bold text-springer-dark-blue text-center">
-                            Assessment Complete!
+                            Maturity Assessment Feedback
                         </CardTitle>
                     </CardHeader>
 
@@ -507,8 +510,45 @@ export function AssessmentForm() {
                             Thank you for completing the resilience maturity assessment.
                         </p>
 
+                        <OverallMaturity scores={assessmentResults.scores_by_category} />
+
                         {/* Radar chart showing category average scores */}
                         <RadarChartResult scores={assessmentResults.scores_by_category} />
+
+                        <MaturityTable />
+
+                        <ResilienceTable />
+
+                        {/*<RadarChartResult scores={ [*/}
+                        {/*    {*/}
+                        {/*        "category_id": 3,*/}
+                        {/*        "category_name": "Risk",*/}
+                        {/*        "total_score": 22.5,*/}
+                        {/*        "total_weight": 10.5,*/}
+                        {/*        "weighted_average": 2.14*/}
+                        {/*    },*/}
+                        {/*    {*/}
+                        {/*        "category_id": 4,*/}
+                        {/*        "category_name": "Governance",*/}
+                        {/*        "total_score": 25,*/}
+                        {/*        "total_weight": 11,*/}
+                        {/*        "weighted_average": 3.00*/}
+                        {/*    },*/}
+                        {/*    {*/}
+                        {/*        "category_id": 5,*/}
+                        {/*        "category_name": "Implementation",*/}
+                        {/*        "total_score": 47,*/}
+                        {/*        "total_weight": 23.5,*/}
+                        {/*        "weighted_average": 1*/}
+                        {/*    },*/}
+                        {/*    {*/}
+                        {/*        "category_id": 6,*/}
+                        {/*        "category_name": "Performance",*/}
+                        {/*        "total_score": 15,*/}
+                        {/*        "total_weight": 7.5,*/}
+                        {/*        "weighted_average": 2*/}
+                        {/*    }*/}
+                        {/*]} />*/}
 
                         {/*/!* Your detailed results list *!/*/}
                         {/*{groupedResults.map((category) => (*/}

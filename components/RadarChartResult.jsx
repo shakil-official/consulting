@@ -42,12 +42,19 @@ export default function RadarChartResult({ scores }) {
                 <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
                     <PolarGrid stroke="#CBD5E1" /> {/* light gray grid */}
                     <PolarAngleAxis dataKey="subject" stroke="#334155" /> {/* labels */}
-                    <PolarRadiusAxis angle={30} domain={[0, "dataMax"]} stroke="#334155" />
+                    {/*<PolarRadiusAxis angle={30} domain={[0, 3]} tickCount={3} stroke="#334155" />*/}
+
+                    <PolarRadiusAxis
+                        domain={[0, 3]}          // সর্বোচ্চ মান
+                        ticks={[1, 2, 3]}        // rings নির্দিষ্ট করে দিলাম
+                        axisLine={false}         // axis লাইন নেই
+                        tick={false}             // label নেই
+                    />
 
                     <Radar
                         name="Average Score"
                         dataKey="A"
-                        stroke="#2563EB"
+                        stroke="#0a2259"
                         fill="#3B82F6"
                         fillOpacity={0.3}
                         dot={renderCustomDot} // use custom colored dots

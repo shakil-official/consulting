@@ -50,22 +50,36 @@ export function PanelOfExperts() {
                     <p className="text-lg md:text-xl text-gray-600  mx-auto" style={{textAlign: "justify"}}>
                         A group of world-recognized specialists, we have experience operating in over 100 countries and
                         have managed more than 500 local and international crises, all of which have had a global impact
-                        on multibillion-dollar companies.Our real-world experience spans boardrooms to remote industrial
-                        sites, servicing sectors from banking and heavy industry to transportation, public institutions,
-                        and defense. Our members are selected based on their expertise, integrity, track record, and
-                        no-bullshit approach. Each of our SPRINGER threats is supported by experts with a minimum of 15
-                        years of proven expertise.
+                        on multibillion-dollar companies.
+                    </p>
+                    <p className="text-lg md:text-xl text-gray-600  mx-auto mt-3" style={{textAlign: "justify"}}>
+                        Our real-world experience spans boardrooms to remote industrial sites, servicing sectors from
+                        banking and heavy industry to transportation, public institutions, and defense. Our members are
+                        selected based on their expertise, integrity, track record, and no-bullshit approach. Each of
+                        our SPRINGER threats is supported by experts with a minimum of 15 years of proven expertise.
+                    </p>
+
+                    <p className="text-lg md:text-xl text-gray-600  mx-auto mt-3" style={{textAlign: "justify"}}>
                         Our team boasts an extraordinary diversity of skills and backgrounds, including military,
                         scientific, economic, legal, sociopolitical, criminological, linguistic, and more. This varied
                         expertise enables us to approach challenges from multiple perspectives, ensuring innovative and
                         effective solutions. We are not solely military-focused; instead, we pride ourselves on the
-                        unique blend of knowledge and academic backgrounds that set us apart from others in the field.
+                        unique blend of knowledge and academic backgrounds that set us apart from others in the
+                        field.</p>
+                    <p className="text-lg md:text-xl text-gray-600  mx-auto mt-3" style={{textAlign: "justify"}}>
                         The founder, his executive team and the board of directors, are all invested in the selection
-                        process and vouch for each individual member. This expertise ensures we know what works at every
-                        tier—and how to speak the language of both board members and frontline teams.For reasons of
-                        discretion, we do not publicize our members' CVs on this website. However, if clients are
-                        interested in obtaining more details about our partners, they are welcome to reach out directly.
+                        process and vouch for each individual member.
                     </p>
+
+                    <p className="text-lg md:text-xl text-gray-600  mx-auto mt-3" style={{textAlign: "justify"}}>
+                        This expertise ensures we know what works at every tier—and how to speak the language of both
+                        board members and frontline teams.
+                    </p>
+
+                    <p className="text-lg md:text-xl text-gray-600  mx-auto mt-3" style={{textAlign: "justify"}}>
+                        For reasons of discretion, we do not publicize our members' CVs on this website. However, if clients are interested in obtaining more details about our partners, they are welcome to reach out directly.
+                    </p>
+
                 </div>
 
                 <div

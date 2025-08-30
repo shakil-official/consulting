@@ -110,7 +110,9 @@ export function Footer() {
                                 <MapPin className="h-5 w-5 text-blue-400 mt-0.5"/>
                                 <span>Group Resilience LTD
                                 <br/>
-                                    167-169 Great Portland Street 5th Floor London W1W 5PF
+                                    167-169 Great Portland Street
+                                <br/>
+                                    5th Floor London W1W 5PF
                                 <br/>
                                     Group Resilience SA - Switzerland
                                 </span>
